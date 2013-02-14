@@ -1,0 +1,94 @@
+<!Doctype html>
+<html>
+<meta charset="utf-8">
+<head>
+<title>Small Business Analysis</title>
+</head>
+<script Language="Javascript">
+
+function Divide(NetSales){
+  document.AssetTurn.AssetTurnover.value=NetSales/document.sales.AverageTotalAssets.value
+	}
+function Divide1(NetSales){
+	document.AssetTurn.RecTurnover.value=NetSales/document.sales.AverageAccountsRecievable.value
+	}
+function Divide2(COGS){
+	document.AssetTurn.InvTurnover.value=COGS/document.sales.AverageInventory.value
+	}
+function Divide3(InvTurnover){
+	document.AssetTurn.AvDayInv.value=document.AssetTurn.InvTurnover.value*1/365
+	}
+function Divide4(NetIncome){
+	document.Profitable.ProfitMargin.value=NetIncome/document.sales.NetSales.value
+	}
+function Divide5(AverageTotalAssets){
+	document.Profitable.ReturnOnAssets.value=NetIncome/document.sales.AverageTotalAssets.value
+	}
+function Divide6(AverageShareholdersEquity){
+	document.Profitable.ReturnOnSOE.value=NetIncome/document.sales.AverageShareholdersEquity.value
+	}
+	
+</script>
+
+
+<body style="background-color: orange">
+<center>
+<h1><strong>Small Business Analysis</h1></strong>
+</center>
+<center>
+<h2>Enter Data Below:</h2>
+<form name=sales>
+Net Sales:<input type="text" name="NetSales" style="background-color: white size="10" maxlength="50" prompt="Enter Sales Amount"/>
+Average Total Assets:<input type="text" name="AverageTotalAssets" style="background-color: white" size="10" maxlength="50" prompt="Enter Average total assets amount"/>
+Average Accounts Recievable:<input type="text" name="AverageAccountsRecievable" style="background-color: white" size="10" maxlength="50" prompt="Enter Average Accounts Recievable"/>
+Cost of Goods Sold:<input type="text" name="COGS" style="background-color: white" size="10" maxlength="50" prompt="Enter COGS"/>
+Average Inventory:<input type="text" name="AverageInventory" style="background-color: white" size="10" maxlength="50" prompt="Enter Average Inventory"/>
+<br>
+Net Income:<input type="text" name="NetIncome" style="background-color: white" size="10" maxlength="50" prompt="Enter Net Income"/>
+Average Shareholders' equity:<input type="text" name="AverageShareholdersEquity" style="background-color: white" size="10" maxlength="50" prompt="Enter Average Shareholders' Equity"/>
+<br>
+<input type="button" value="Profit Margin on sales" ONClick="Divide4(document.sales.NetIncome.value)">
+<input type="button" value="Clear" ONClick="this.form.reset()">
+<input type="button" value="Asset Turnover" ONClick="Divide(NetSales.value);alert('BAZINGA!')">
+<input type="button" value="Recievables Turnover" ONClick="Divide1(NetSales.value)">
+<input type="button" value="Inventory Turnover" ONClick="Divide2(COGS.value)">
+<input type="button" value="Average Days in Inventory" ONClick="Divide3(document.AssetTurn.InvTurnover.value)">
+<input type="button" value="Return on Assets" ONClick="Divide5(document.sales.AverageTotalAssets.value)">
+<input type="button" value="Return on Equity" ONClick="Divide6(document.sales.AverageShareholdersEquity.value)">
+</form></center>
+<hr />
+<br>
+<br>
+
+<center>
+<h1>Profitability ratios</h1></center>
+<h2>Profit Margin on Sales</h2><br>
+<form name=Profitable>
+<input type="text" name="ProfitMargin" style="background-color: white" size="10" maxlength="50"/>
+<h2>Return on Assets</h2>
+<input type="text" name="ReturnOnAssets" style="background-color: white" size="10" maxlength="50"/>
+<h2>Return on Equity</h2>
+<input type="text" name="ReturnOnSOE" style="background-color: white" size="10" maxlength="50"/>
+</form>
+<hr />
+
+
+<center>
+<h1>Activity Analysis</h1></center>
+<h2>Asset Turnover</h2><br>
+<form Name=AssetTurn>
+<input type="text" name="AssetTurnover" style="background-color: white" size="10" maxlength="50"/>
+<h2>Recievables Turnover</h2>
+<input type="text" name="RecTurnover" style="background-color: white" size="10" maxlength="50"/>
+<h2>Average Days in Inventory</h2>
+<input type="text" name="AvDayInv" style="background-color: white" size="10" maxlength="50"/>
+<h2>Inventory Turnover</h2>
+<input type="text" name="InvTurnover" style="background-color: white" size="10" maxlength="50"/>
+
+</form>
+
+
+
+</body>
+
+</html>
