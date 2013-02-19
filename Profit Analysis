@@ -1,3 +1,4 @@
+
 <!Doctype html>
 <html>
 <meta charset="utf-8">
@@ -7,7 +8,7 @@
 <script Language="Javascript">
 
 function Divide(NetSales){
-  document.AssetTurn.AssetTurnover.value=NetSales/document.sales.AverageTotalAssets.value
+	document.AssetTurn.AssetTurnover.value=NetSales/document.sales.AverageTotalAssets.value
 	}
 function Divide1(NetSales){
 	document.AssetTurn.RecTurnover.value=NetSales/document.sales.AverageAccountsRecievable.value
@@ -21,13 +22,15 @@ function Divide3(InvTurnover){
 function Divide4(NetIncome){
 	document.Profitable.ProfitMargin.value=NetIncome/document.sales.NetSales.value
 	}
-function Divide5(AverageTotalAssets){
+function Divide5(NetIncome){
 	document.Profitable.ReturnOnAssets.value=NetIncome/document.sales.AverageTotalAssets.value
 	}
-function Divide6(AverageShareholdersEquity){
-	document.Profitable.ReturnOnSOE.value=NetIncome/document.sales.AverageShareholdersEquity.value
+function Divide6(NetIncome){
+	document.Profitable.ReturnOnSOE.value=NetIncome/document.sales.ASE.value
 	}
-	
+function CVP1(SellingPrice){
+	document.CVP.CM.value=(document.CVP.SellingPrice.value)-(document.CVP.VCperUnit.value)
+	}
 </script>
 
 
@@ -45,7 +48,7 @@ Cost of Goods Sold:<input type="text" name="COGS" style="background-color: white
 Average Inventory:<input type="text" name="AverageInventory" style="background-color: white" size="10" maxlength="50" prompt="Enter Average Inventory"/>
 <br>
 Net Income:<input type="text" name="NetIncome" style="background-color: white" size="10" maxlength="50" prompt="Enter Net Income"/>
-Average Shareholders' equity:<input type="text" name="AverageShareholdersEquity" style="background-color: white" size="10" maxlength="50" prompt="Enter Average Shareholders' Equity"/>
+Average Shareholders' equity:<input type="text" name="ASE" style="background-color: white" size="10" maxlength="50" prompt="Enter Average Shareholders' Equity"/>
 <br>
 <input type="button" value="Profit Margin on sales" ONClick="Divide4(document.sales.NetIncome.value)">
 <input type="button" value="Clear" ONClick="this.form.reset()">
@@ -53,8 +56,8 @@ Average Shareholders' equity:<input type="text" name="AverageShareholdersEquity"
 <input type="button" value="Recievables Turnover" ONClick="Divide1(NetSales.value)">
 <input type="button" value="Inventory Turnover" ONClick="Divide2(COGS.value)">
 <input type="button" value="Average Days in Inventory" ONClick="Divide3(document.AssetTurn.InvTurnover.value)">
-<input type="button" value="Return on Assets" ONClick="Divide5(document.sales.AverageTotalAssets.value)">
-<input type="button" value="Return on Equity" ONClick="Divide6(document.sales.AverageShareholdersEquity.value)">
+<input type="button" value="Return on Assets" ONClick="Divide5(document.sales.NetIncome.value)">
+<input type="button" value="Return on Equity" ONClick="Divide6(document.sales.NetIncome.value)">
 </form></center>
 <hr />
 <br>
@@ -86,6 +89,28 @@ Average Shareholders' equity:<input type="text" name="AverageShareholdersEquity"
 <input type="text" name="InvTurnover" style="background-color: white" size="10" maxlength="50"/>
 
 </form>
+<hr />
+<center>
+<h1>CVP Analysis</h1>
+<p> 
+<h2>Cost Volume-Profit Analysis studies the behavior and relationship among elements of total revenues, total costs, and income<br>
+as changes occur in the units sold, the selling price, the variable cost per unit, or fixed costs of a product.<br></h2>
+</p></center>
+<br>
+<form name=CVP>
+<h3>STEP #1:<br>
+What is your selling price?<input type="text" name="SellingPrice" style="background-color: white" size="10" maxlength="50"/><br>
+What is your Variable Cost per unit?<input type="text" name="VCperUnit" style="background-color: white" size="10" maxlength="50"/><br>
+What are your total Fixed Cost?<input type="text" name="FC" style="background-color: white" size="10" maxlength="50"/><br>
+What is your Target Net Income?<input type="text" name="NI" style="background-color: white" size="10" maxlength="50"/><br>
+What is your Tax Rate?<input type="text" name="TXrate" style="background-color: white" size="10" maxlength="50"/><br>
+<input type="button" value="Analyze" ONClick="CVP1(document.CVP.SellingPrice.value)">
+<hr />
+<center>
+Contribution Margin Per Unit:<input type="text name="CM" style="background-color: white" size="10" maxlenght="50"/>
+
+</h3>
+</form name=CVP>
 
 
 
