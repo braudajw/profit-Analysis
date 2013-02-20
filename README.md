@@ -1,8 +1,8 @@
 profit-Analysis
 ===============
-Contribution Margin%=Contribution margin/sales
-Breakeven units=Fixed Costs/contribution margin per unit
-Breakeven revenues=fixed costs/contribution margin %
+Contribution Margin%=Contribution margin/sales<br>
+Breakeven units=Fixed Costs/contribution margin per unit<br>
+Breakeven revenues=fixed costs/contribution margin %<br>
 Contribution Margin=sales-variable costs
 Target operating income=(fixed costs+target profit)/contribution margin %
 Operating Leverage=contribution margin/operating income
