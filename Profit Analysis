@@ -20,17 +20,20 @@ function Divide3(InvTurnover){
 	document.AssetTurn.AvDayInv.value=document.AssetTurn.InvTurnover.value*1/365
 	}
 function Divide4(NetIncome){
-	document.Profitable.ProfitMargin.value=NetIncome/document.sales.NetSales.value
+	document.Profitable.ProfitMargin.value=(NetIncome/document.sales.NetSales.value)*100 +"%"
 	}
 function Divide5(NetIncome){
-	document.Profitable.ReturnOnAssets.value=NetIncome/document.sales.AverageTotalAssets.value
+	document.Profitable.ReturnOnAssets.value=(NetIncome/document.sales.AverageTotalAssets.value)*100 +"%"
 	}
 function Divide6(NetIncome){
-	document.Profitable.ReturnOnSOE.value=NetIncome/document.sales.ASE.value
+	document.Profitable.ReturnOnSOE.value=(NetIncome/document.sales.ASE.value)*100 +"%"
 	}
 function CVP1(SellingPrice){
-	document.CVP.CM.value=(document.CVP.SellingPrice.value)-(document.CVP.VCperUnit.value)
+	var x=document.CVP.
+	x.CM.value=(x.SellingPrice.value)-(x.VCperUnit.value)
 	}
+	// Contribution Margin per unit=Selling price-Variable cost per unit
+	// Breakeven units =Fixed Costs/ Contribution Margin Per unit
 </script>
 
 
@@ -67,11 +70,11 @@ Average Shareholders' equity:<input type="text" name="ASE" style="background-col
 <h1>Profitability ratios</h1></center>
 <h2>Profit Margin on Sales</h2><br>
 <form name=Profitable>
-<input type="text" name="ProfitMargin" style="background-color: white" size="10" maxlength="50"/>
+<input type="text" name="ProfitMargin" style="background-color: white" size="5" maxlength="5"/>
 <h2>Return on Assets</h2>
-<input type="text" name="ReturnOnAssets" style="background-color: white" size="10" maxlength="50"/>
+<input type="text" name="ReturnOnAssets" style="background-color: white" size="5" maxlength="5"/>
 <h2>Return on Equity</h2>
-<input type="text" name="ReturnOnSOE" style="background-color: white" size="10" maxlength="50"/>
+<input type="text" name="ReturnOnSOE" style="background-color: white" size="5" maxlength="5"/>
 </form>
 <hr />
 
