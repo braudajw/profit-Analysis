@@ -108,7 +108,7 @@ What is your Tax Rate?<input type="text" name="TXrate" style="background-color: 
 <input type="button" value="Analyze" ONClick="CVP1(document.CVP.SellingPrice.value)">
 <hr />
 <center>
-Contribution Margin Per Unit:<input type="text name="CM" style="background-color: white" size="10" maxlenght="50"/>
+Contribution Margin Per Unit:<input type="text" name="CM" style="background-color: white" size="10" maxlenght="50"/>
 
 </h3>
 </form name=CVP>
