@@ -39,6 +39,7 @@ function CVP1(SellingPrice){
 <center>
 <h1><strong>Small Business Analysis</h1></strong>
 </center>
+<a href="#CosterV"><h1>CVP Analysis</h1></a>
 <center>
 <h2>Enter Data Below:</h2>
 <form name=sales>
@@ -126,7 +127,7 @@ profitfor every dollar of revenues."> <img height="25" width="25" src="http://up
 </form>
 <hr />
 <center>
-<h1>Cost Volume Profit Analysis</h1>
+<a name="CosterV"><h1>Cost Volume Profit Analysis</h1></a>
 <p> 
 <h2>Cost Volume-Profit Analysis studies the behavior and relationship among elements of total revenues, total costs, and income<br>
 as changes occur in the units sold, the selling price, the variable cost per unit, or fixed costs of a product.<br></h2>
