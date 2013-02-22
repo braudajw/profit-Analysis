@@ -1,4 +1,3 @@
-
 <!Doctype html>
 <html>
 <meta charset="utf-8">
@@ -29,8 +28,7 @@ function Divide6(NetIncome){
 	document.Profitable.ReturnOnSOE.value=(NetIncome/document.sales.ASE.value)*100 +"%"
 	}
 function CVP1(SellingPrice){
-	var x=document.CVP.
-	x.CM.value=(x.SellingPrice.value)-(x.VCperUnit.value)
+	document.CVP.CM.value=(SellingPrice)-(document.CVP.VCperUnit.value)
 	}
 	// Contribution Margin per unit=Selling price-Variable cost per unit
 	// Breakeven units =Fixed Costs/ Contribution Margin Per unit
