@@ -4,6 +4,7 @@
 <head>
 <title>Small Business Analysis</title>
 </head>
+
 <script Language="Javascript">
 
 function Divide(NetSales){
@@ -28,10 +29,13 @@ function Divide6(NetIncome){
 	document.Profitable.ReturnOnSOE.value=(NetIncome/document.sales.ASE.value)*100 +"%"
 	}
 function CVP1(SellingPrice){
-	document.CVP.CM.value=(SellingPrice)-(document.CVP.VCperUnit.value)
+	document.CVP.CM.value=(SellingPrice)-(document.CVP.VCperUnit.value);
+	document.CVP.CMP.value=(document.CVP.CM.value/document.sales.NetSales.value).toFixed(2)*100 + "%";
+	document.CVP.BreakevenUnits.value=(document.CVP.FC.value/document.CVP.CM.value);
+	document.CVP.ContributionMargin.value=((document.CVP.CMP.value/(100))*document.NetSales.value);
+	document.CVP.OP.value=(((document.CVP.CMP.value/100)*document.sales.NetSales.value)/((document.CVP.CMP.value*document.sales.NetSales.value)-document.CVP.FC.value))
 }
 	// Contribution Margin per unit=Selling price-Variable cost per unit
-	// Breakeven units =Fixed Costs/ Contribution Margin Per unit
 </script>
 
 
@@ -65,24 +69,28 @@ Average Shareholders' equity:<input type="text" name="ASE" style="background-col
 <br>
 <br>
 <center>
-<h1>Profitability ratios</h1></center>
+
+<h1>Profitability Ratios</h1></center>
+
 <h2>Profit Margin on Sales</h2><br>
 <form name=Profitable>
-<input type="text" name="ProfitMargin" style="background-color: white" size="5" maxlength="5"/>
+<input type="text" name="ProfitMargin" style="background-color: white" size="5" maxlength="5" disabled/>
 <a Title="Profit Margin of Sales:
 This percentage represents the percent of your revenues 
 that is Net Income.For example if you have a Profit 
 Margin of Sales of 10% this means youmake 10 cents in 
 profitfor every dollar of revenues."> <img height="25" width="25" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
+
 <h2>Return on Assets</h2>
-<input type="text" name="ReturnOnAssets" style="background-color: white" size="5" maxlength="5"/>
+<input type="text" name="ReturnOnAssets" style="background-color: white" size="5" maxlength="5" disabled/>
 <a Title="Profit Margin of Sales:
 This percentage represents the percent of your revenues 
 that is Net Income.For example if you have a Profit 
 Margin of Sales of 10% this means youmake 10 cents in 
 profitfor every dollar of revenues."> <img height="25" width="25" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
+
 <h2>Return on Equity</h2>
-<input type="text" name="ReturnOnSOE" style="background-color: white" size="5" maxlength="5"/>
+<input type="text" name="ReturnOnSOE" style="background-color: white" size="5" maxlength="5" disabled/>
 <a Title="Profit Margin of Sales:
 This percentage represents the percent of your revenues 
 that is Net Income.For example if you have a Profit 
@@ -94,30 +102,34 @@ profitfor every dollar of revenues."> <img height="25" width="25" src="http://up
 
 <center>
 <h1>Activity Analysis</h1></center>
+
 <h2>Asset Turnover</h2><br>
 <form Name=AssetTurn>
-<input type="text" name="AssetTurnover" style="background-color: white" size="10" maxlength="50"/>
+<input type="text" name="AssetTurnover" style="background-color: white" size="10" maxlength="50" disabled/>
 <a Title="Profit Margin of Sales:
 This percentage represents the percent of your revenues 
 that is Net Income.For example if you have a Profit 
 Margin of Sales of 10% this means youmake 10 cents in 
 profitfor every dollar of revenues."> <img height="25" width="25" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
+
 <h2>Recievables Turnover</h2>
-<input type="text" name="RecTurnover" style="background-color: white" size="10" maxlength="50"/>
+<input type="text" name="RecTurnover" style="background-color: white" size="10" maxlength="50" disabled/>
 <a Title="Profit Margin of Sales:
 This percentage represents the percent of your revenues 
 that is Net Income.For example if you have a Profit 
 Margin of Sales of 10% this means youmake 10 cents in 
 profitfor every dollar of revenues."> <img height="25" width="25" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
+
 <h2>Average Days in Inventory</h2>
-<input type="text" name="AvDayInv" style="background-color: white" size="10" maxlength="50"/>
+<input type="text" name="AvDayInv" style="background-color: white" size="10" maxlength="50" disabled/>
 <a Title="Profit Margin of Sales:
 This percentage represents the percent of your revenues 
 that is Net Income.For example if you have a Profit 
 Margin of Sales of 10% this means youmake 10 cents in 
 profitfor every dollar of revenues."> <img height="25" width="25" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
+
 <h2>Inventory Turnover</h2>
-<input type="text" name="InvTurnover" style="background-color: white" size="10" maxlength="50"/>
+<input type="text" name="InvTurnover" style="background-color: white" size="10" maxlength="50" disabled/>
 <a Title="Profit Margin of Sales:
 This percentage represents the percent of your revenues 
 that is Net Income.For example if you have a Profit 
@@ -146,43 +158,56 @@ What is your Tax Rate?<input type="text" name="TXrate" style="background-color: 
 <hr />
 <center>
 Contribution Margin Per Unit:
-<input type="text" name="CM" style="background-color: white" size="10" maxlength="5"/>
+<input type="text" name="CM" style="background-color: white" size="10" maxlength="5" disabled/>
 <a Title="Profit Margin of Sales:
 This percentage represents the percent of your revenues 
 that is Net Income.For example if you have a Profit 
 Margin of Sales of 10% this means youmake 10 cents in 
 profitfor every dollar of revenues."> <img height="25" width="25" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
+
 Contribution Margin Percentage:
-<input type="text" name="CM%" style="background-color: white" size="10" maxlength="5"/>
+<input type="text" name="CMP" style="background-color: white" size="10" maxlength="5" disabled/>
 <a Title="Profit Margin of Sales:
 This percentage represents the percent of your revenues 
 that is Net Income.For example if you have a Profit 
 Margin of Sales of 10% this means youmake 10 cents in 
 profitfor every dollar of revenues."> <img height="25" width="25" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
+
 Breakeven Units:
-<input type="text" name="BreakevenUnits" style="background-color: white" size="5" maxlength="5"/>
+<input type="text" name="BreakevenUnits" style="background-color: white" size="5" maxlength="5" disabled/>
 <a Title="Profit Margin of Sales:
 This percentage represents the percent of your revenues 
 that is Net Income.For example if you have a Profit 
 Margin of Sales of 10% this means youmake 10 cents in 
 profitfor every dollar of revenues."> <img height="25" width="25" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
 <br>
+
 Breakeven Revenues:
-<input type="text" name="BreakevenRevenues" style="background-color: white" size="5" maxlength="5"/>
+<input type="text" name="BreakevenRevenues" style="background-color: white" size="5" maxlength="5" disabled/>
 <a Title="Profit Margin of Sales:
 This percentage represents the percent of your revenues 
 that is Net Income.For example if you have a Profit 
 Margin of Sales of 10% this means youmake 10 cents in 
 profitfor every dollar of revenues."> <img height="25" width="25" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
+
 Revenues to reach target income:
-<input type="text" name="RevenuesTI" style="background-color: white" size="5" maxlength="5"/>
+<input type="text" name="RevenuesTI" style="background-color: white" size="5" maxlength="5" disabled/>
 <a Title="Profit Margin of Sales:
 This percentage represents the percent of your revenues 
 that is Net Income.For example if you have a Profit 
 Margin of Sales of 10% this means youmake 10 cents in 
 profitfor every dollar of revenues."> <img height="25" width="25" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
+
+Contribution Margin:
+<input type="text" name="ContributionMargin" style="background-color: white" size="5" maxlength="5" disabled/>
+<a Title="Profit Margin of Sales:
+This percentage represents the percent of your revenues 
+that is Net Income.For example if you have a Profit 
+Margin of Sales of 10% this means youmake 10 cents in 
+profitfor every dollar of revenues."> <img height="25" width="25" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
+
 Operating Leverage:
-<input type="text" name="OP" style="background-color: white" size="5" maxlength="5"/>
+<input type="text" name="OP" style="background-color: white" size="5" maxlength="5" disabled/>
 <a Title="Profit Margin of Sales:
 This percentage represents the percent of your revenues 
 that is Net Income.For example if you have a Profit 
