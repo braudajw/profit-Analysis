@@ -30,7 +30,7 @@ function Divide6(NetIncome){
 	}
 function CVP1(SellingPrice){
 	document.CVP.CM.value=(SellingPrice)-(document.CVP.VCperUnit.value);
-	document.CVP.CMP.value=(document.CVP.CM.value/document.sales.NetSales.value).toFixed(2)*100 + "%";
+	document.CVP.CMP.value=((document.CVP.CM.value/document.sales.NetSales.value).toFixed(2)*100).toFixed(2) + "%";
 	document.CVP.BreakevenUnits.value=(document.CVP.FC.value/document.CVP.CM.value);
 	document.CVP.ContributionMargin.value=((document.CVP.CMP.value/(100))*document.NetSales.value);
 	document.CVP.OP.value=(((document.CVP.CMP.value/100)*document.sales.NetSales.value)/((document.CVP.CMP.value*document.sales.NetSales.value)-document.CVP.FC.value))
