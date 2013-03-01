@@ -20,13 +20,13 @@ function Divide3(InvTurnover){
 	document.AssetTurn.AvDayInv.value=document.AssetTurn.InvTurnover.value*1/365
 	}
 function Divide4(NetIncome){
-	document.Profitable.ProfitMargin.value=((NetIncome/document.sales.NetSales.value).toFixed(2))*100 +"%"
+	document.Profitable.ProfitMargin.value=((NetIncome/document.sales.NetSales.value)*100).toFixed(2) +"%"
 	}
 function Divide5(NetIncome){
-	document.Profitable.ReturnOnAssets.value=((NetIncome/document.sales.AverageTotalAssets.value).toFixed(2))*100 +"%"
+	document.Profitable.ReturnOnAssets.value=((NetIncome/document.sales.AverageTotalAssets.value)*100).toFixed(2) +"%"
 	}
 function Divide6(NetIncome){
-	document.Profitable.ReturnOnSOE.value=((NetIncome/document.sales.ASE.value).toFixed(2))*100 +"%"
+	document.Profitable.ReturnOnSOE.value=((NetIncome/document.sales.ASE.value)*100).toFixed(2) +"%"
 	}
 function CVP1(SellingPrice){
 	document.CVP.CM.value=(SellingPrice)-(document.CVP.VCperUnit.value);
