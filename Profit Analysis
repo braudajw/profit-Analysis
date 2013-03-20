@@ -80,24 +80,24 @@ Average Shareholders' equity:<input type="text" name="ASE" style="background-col
 <a Title="Profit Margin of Sales:
 This percentage represents the percent of your revenues 
 that is Net Income.For example if you have a Profit 
-Margin of Sales of 10% this means youmake 10 cents in 
-profitfor every dollar of revenues."> <img height="25" width="25" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
+Margin of Sales of 10% this means you make 10 cents in 
+profit for every dollar of revenues."> <img height="25" width="25" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
 
 <h2>Return on Assets</h2>
 <input type="text" name="ReturnOnAssets" style="background-color: white" size="5" maxlength="5" disabled/>
 <a Title="Profit Margin of Sales:
-This percentage represents the percent of your revenues 
-that is Net Income.For example if you have a Profit 
-Margin of Sales of 10% this means youmake 10 cents in 
-profitfor every dollar of revenues."> <img height="25" width="25" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
+This percentage represents the percent of your assets 
+that is Net Income.For example if you have a Return
+on Assets of 10% this means you make 10 cents in 
+profit for every dollar of assets."> <img height="25" width="25" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
 
 <h2>Return on Equity</h2>
 <input type="text" name="ReturnOnSOE" style="background-color: white" size="5" maxlength="5" disabled/>
 <a Title="Profit Margin of Sales:
-This percentage represents the percent of your revenues 
-that is Net Income.For example if you have a Profit 
-Margin of Sales of 10% this means youmake 10 cents in 
-profitfor every dollar of revenues."> <img height="25" width="25" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
+This percentage represents the percent of your equity 
+that is Net Income.For example if you have a Return 
+on Equity of 10% this means you make 10 cents in 
+profitfor every dollar of equity."> <img height="25" width="25" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
 </form>
 <hr />
 
@@ -109,7 +109,7 @@ profitfor every dollar of revenues."> <img height="25" width="25" src="http://up
 <form Name=AssetTurn>
 <input type="text" name="AssetTurnover" style="background-color: white" size="10" maxlength="50" disabled/>
 <a Title="Profit Margin of Sales:
-This percentage represents the percent of your revenues 
+This represents how often inventory turns over. 
 that is Net Income.For example if you have a Profit 
 Margin of Sales of 10% this means youmake 10 cents in 
 profitfor every dollar of revenues."> <img height="25" width="25" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
