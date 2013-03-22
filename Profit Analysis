@@ -1,3 +1,4 @@
+
 <!Doctype html>
 <html>
 <meta charset="utf-8">
@@ -85,7 +86,7 @@ profit for every dollar of revenues."> <img height="25" width="25" src="http://u
 
 <h2>Return on Assets</h2>
 <input type="text" name="ReturnOnAssets" style="background-color: white" size="5" maxlength="5" disabled/>
-<a Title="Profit Margin of Sales:
+<a Title="Return on Assets:
 This percentage represents the percent of your assets 
 that is Net Income.For example if you have a Return
 on Assets of 10% this means you make 10 cents in 
@@ -93,7 +94,7 @@ profit for every dollar of assets."> <img height="25" width="25" src="http://upl
 
 <h2>Return on Equity</h2>
 <input type="text" name="ReturnOnSOE" style="background-color: white" size="5" maxlength="5" disabled/>
-<a Title="Profit Margin of Sales:
+<a Title="Return on Equity:
 This percentage represents the percent of your equity 
 that is Net Income.For example if you have a Return 
 on Equity of 10% this means you make 10 cents in 
@@ -108,35 +109,41 @@ profitfor every dollar of equity."> <img height="25" width="25" src="http://uplo
 <h2>Asset Turnover</h2><br>
 <form Name=AssetTurn>
 <input type="text" name="AssetTurnover" style="background-color: white" size="10" maxlength="50" disabled/>
-<a Title="Profit Margin of Sales:
-This represents how often inventory turns over. 
-that is Net Income.For example if you have a Profit 
-Margin of Sales of 10% this means youmake 10 cents in 
-profitfor every dollar of revenues."> <img height="25" width="25" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
+<a Title="Asset Turnover:
+This represents how often assets turn over 
+given sales in the balance sheet. Shows 
+how productive your assets are.  The more
+the better greater than 1."> <img height="25" width="25" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
 
 <h2>Recievables Turnover</h2>
 <input type="text" name="RecTurnover" style="background-color: white" size="10" maxlength="50" disabled/>
-<a Title="Profit Margin of Sales:
-This percentage represents the percent of your revenues 
-that is Net Income.For example if you have a Profit 
-Margin of Sales of 10% this means youmake 10 cents in 
-profitfor every dollar of revenues."> <img height="25" width="25" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
+<a Title="Recievables Turnover:
+This number represents how many times recievables
+turn a period of time.  If recievable turnover is
+low you may have a cash flow problem. A low ratio 
+implies the company should re-assess its credit
+ policies in order to ensure the timely 
+ collection of imparted credit that is not 
+ earning interest for the firm."> <img height="25" width="25" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
 
 <h2>Average Days in Inventory</h2>
 <input type="text" name="AvDayInv" style="background-color: white" size="10" maxlength="50" disabled/>
-<a Title="Profit Margin of Sales:
-This percentage represents the percent of your revenues 
-that is Net Income.For example if you have a Profit 
-Margin of Sales of 10% this means youmake 10 cents in 
-profitfor every dollar of revenues."> <img height="25" width="25" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
+<a Title="Average Days in Inventory:
+The average number of days it takes one piece of 
+inventory to get out the warehouse.  The lower the
+better depends on your type of business."> <img height="25" width="25" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
 
 <h2>Inventory Turnover</h2>
 <input type="text" name="InvTurnover" style="background-color: white" size="10" maxlength="50" disabled/>
-<a Title="Profit Margin of Sales:
-This percentage represents the percent of your revenues 
-that is Net Income.For example if you have a Profit 
-Margin of Sales of 10% this means youmake 10 cents in 
-profitfor every dollar of revenues."> <img height="25" width="25" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
+<a Title="Inventory Turnover:
+This ratio should be compared against industry
+ averages. A low turnover implies poor sales and,
+ therefore, excess inventory. A high ratio implies
+ either strong sales or ineffective buying.
+High inventory levels are unhealthy because 
+they represent an investment with a rate of 
+return of zero. It also opens the company up
+ to trouble should prices begin to fall."> <img height="25" width="25" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
 
 </form>
 <hr />
@@ -162,36 +169,34 @@ How many units did you sell?<input type="text" name="volume" style="background-c
 <center>
 Contribution Margin Per Unit:
 <input type="text" name="CM" style="background-color: white" size="10" maxlength="5" disabled/>
-<a Title="Profit Margin of Sales:
-This percentage represents the percent of your revenues 
-that is Net Income.For example if you have a Profit 
-Margin of Sales of 10% this means youmake 10 cents in 
-profitfor every dollar of revenues."> <img height="25" width="25" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
+<a Title="Contribution Margin Per unit:
+This represent that marginal profit per unit of sale. 
+The amount per unit that will be applied to fixed cost
+which increases operating income. The amount of your 
+selling price over your variable cost per unit."> <img height="25" width="25" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
 
 Contribution Margin Percentage:
 <input type="text" name="CMP" style="background-color: white" size="10" maxlength="5" disabled/>
-<a Title="Profit Margin of Sales:
+<a Title="Contribution Margin Percentage:
 This percentage represents the percent of your revenues 
-that is Net Income.For example if you have a Profit 
-Margin of Sales of 10% this means youmake 10 cents in 
-profitfor every dollar of revenues."> <img height="25" width="25" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
+that is Contribution Margin. If your have a 
+Contribution Margin of $10 and sales of $100 then
+your margin % will be 10%."> <img height="25" width="25" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
 
 Breakeven Units:
 <input type="text" name="BreakevenUnits" style="background-color: white" size="5" maxlength="5" disabled/>
-<a Title="Profit Margin of Sales:
-This percentage represents the percent of your revenues 
-that is Net Income.For example if you have a Profit 
-Margin of Sales of 10% this means youmake 10 cents in 
-profitfor every dollar of revenues."> <img height="25" width="25" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
+<a Title="Breakeven Units:
+The numbers of units you must sell to 
+cover your fixed and variable cost 
+and make zero profit."> <img height="25" width="25" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
 <br>
 
 Breakeven Revenues:
 <input type="text" name="BreakevenRevenues" style="background-color: white" size="5" maxlength="5" disabled/>
-<a Title="Profit Margin of Sales:
-This percentage represents the percent of your revenues 
-that is Net Income.For example if you have a Profit 
-Margin of Sales of 10% this means youmake 10 cents in 
-profitfor every dollar of revenues."> <img height="25" width="25" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
+<a Title="Breakeven Revenues:
+The amount of revenues you need to earn to cover
+your fixed and varaible cost and make zero
+profit."> <img height="25" width="25" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
 
 Revenues to reach target income:
 <input type="text" name="RevenuesTI" style="background-color: white" size="5" maxlength="5" disabled/>
