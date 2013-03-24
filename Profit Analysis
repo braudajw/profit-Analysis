@@ -1,4 +1,3 @@
-
 <!Doctype html>
 <html>
 <meta charset="utf-8">
@@ -8,29 +7,30 @@
 
 <script Language="Javascript">
 
-function Divide(NetSales){
-	document.AssetTurn.AssetTurnover.value=NetSales/document.sales.AverageTotalAssets.value
+function AssetTO(){
+	document.AssetTurn.AssetTurnover.value=document.sales.NetSales.value/document.sales.AverageTotalAssets.value
 	}
-function Divide1(NetSales){
-	document.AssetTurn.RecTurnover.value=NetSales/document.sales.AverageAccountsRecievable.value
+function RecTO(){
+	document.AssetTurn.RecTurnover.value=document.sales.NetSales.value/document.sales.AverageAccountsReceivable.value
 	}
-function Divide2(COGS){
-	document.AssetTurn.InvTurnover.value=COGS/document.sales.AverageInventory.value
+function InventTO(){
+	document.AssetTurn.InvTurnover.value=document.sales.COGS.value/document.sales.AverageInventory.value; //check this - cost of goods over avginvent
+	AvgDayInventory(document.AssetTurn.InvTurnover.value); //this too
 	}
-function Divide3(InvTurnover){
-	document.AssetTurn.AvDayInv.value=document.AssetTurn.InvTurnover.value*1/365
+function AvgDayInventory(){
+	document.AssetTurn.AvDayInv.value=document.AssetTurn.InvTurnover.value*1/365 //day or year?
 	}
-function Divide4(NetIncome){
-	document.Profitable.ProfitMargin.value=((NetIncome/document.sales.NetSales.value)*100).toFixed(2) +"%"
+function PMsales(){
+	document.Profitable.ProfitMargin.value=((document.sales.NetIncome.value/document.sales.NetSales.value)*100).toFixed(2) +"%"
 	}
-function Divide5(NetIncome){
-	document.Profitable.ReturnOnAssets.value=((NetIncome/document.sales.AverageTotalAssets.value)*100).toFixed(2) +"%"
+function ReturnonAssets(){
+	document.Profitable.ReturnOnAssets.value=((document.sales.NetIncome.value/document.sales.AverageTotalAssets.value)*100).toFixed(2) +"%"
 	}
-function Divide6(NetIncome){
-	document.Profitable.ReturnOnSOE.value=((NetIncome/document.sales.ASE.value)*100).toFixed(2) +"%"
+function ROE(){
+	document.Profitable.ReturnOnSOE.value=((document.sales.NetIncome.value/document.sales.ASE.value)*100).toFixed(2) +"%"
 	}
-function CVP1(SellingPrice){
-	document.CVP.CM.value=(SellingPrice)-(document.CVP.VCperUnit.value);
+function CVP1(){
+	document.CVP.CM.value=(document.CVP.SellingPrice.value)-(document.CVP.VCperUnit.value);
 	document.CVP.CMP.value=((document.CVP.CM.value/document.sales.NetSales.value)*100).toFixed(2) + "%";
 	document.CVP.BreakevenUnits.value=(document.CVP.FC.value/document.CVP.CM.value);
 	document.CVP.ContributionMargin.value=(document.CVP.volume.value*document.CVP.CM.value);
@@ -42,188 +42,216 @@ function CVP1(SellingPrice){
 </script>
 
 
-<body style="background-color: orange">
-<center>
-<h1><strong>Small Business Analysis</h1></strong>
-</center>
-<a href="#CosterV"><h1>CVP Analysis</h1></a>
-<center>
-<h2>Enter Data Below:</h2>
-<form name=sales>
-Net Sales:<input type="text" name="NetSales" style="background-color: white size="10" maxlength="50" prompt="Enter Sales Amount"/>
-Average Total Assets:<input type="text" name="AverageTotalAssets" style="background-color: white" size="10" maxlength="50" prompt="Enter Average total assets amount"/>
-Average Accounts Recievable:<input type="text" name="AverageAccountsRecievable" style="background-color: white" size="10" maxlength="50" prompt="Enter Average Accounts Recievable"/>
-Cost of Goods Sold:<input type="text" name="COGS" style="background-color: white" size="10" maxlength="50" prompt="Enter COGS"/>
-Average Inventory:<input type="text" name="AverageInventory" style="background-color: white" size="10" maxlength="50" prompt="Enter Average Inventory"/>
-<br>
-Net Income:<input type="text" name="NetIncome" style="background-color: white" size="10" maxlength="50" prompt="Enter Net Income"/>
-Average Shareholders' equity:<input type="text" name="ASE" style="background-color: white" size="10" maxlength="50" prompt="Enter Average Shareholders' Equity"/>
-<br>
-<input type="button" value="Profit Margin on sales" ONClick="Divide4(document.sales.NetIncome.value)">
-<input type="button" value="Clear" ONClick="this.form.reset()">
-<input type="button" value="Asset Turnover" ONClick="Divide(NetSales.value);alert('BAZINGA!')">
-<input type="button" value="Recievables Turnover" ONClick="Divide1(NetSales.value)">
-<input type="button" value="Inventory Turnover" ONClick="Divide2(COGS.value)">
-<input type="button" value="Average Days in Inventory" ONClick="Divide3(document.AssetTurn.InvTurnover.value)">
-<input type="button" value="Return on Assets" ONClick="Divide5(document.sales.NetIncome.value)">
-<input type="button" value="Return on Equity" ONClick="Divide6(document.sales.NetIncome.value)">
-</form></center>
-<hr /> 
-<br>
-<br>
-<center>
+<body bgcolor="#AAAAAA">
+	<center><h1><strong>Small Business Analysis</h1></strong></center>
+	
+	<a href="#CosterV"><h1>CVP Analysis</h1></a>
+	
+	<center>
+		<h2>Enter Data Below:</h2>
+			<form name=sales>
+				Net Sales:<input type="text" name="NetSales" style="background-color: white size="10" maxlength="50" prompt="Enter Sales Amount"/>
+				Average Total Assets:<input type="text" name="AverageTotalAssets" style="background-color: white" size="10" maxlength="50" prompt="Enter Average total assets amount"/>
+				Average Accounts Receivable:<input type="text" name="AverageAccountsReceivable" style="background-color: white" size="10" maxlength="50" prompt="Enter Average Accounts Receivable"/>
+				Cost of Goods Sold:<input type="text" name="COGS" style="background-color: white" size="10" maxlength="50" prompt="Enter COGS"/>
+				<br>
+				Average Inventory:<input type="text" name="AverageInventory" style="background-color: white" size="10" maxlength="50" prompt="Enter Average Inventory"/>
+				Net Income:<input type="text" name="NetIncome" style="background-color: white" size="10" maxlength="50" prompt="Enter Net Income"/>
+				Average Shareholders' equity:<input type="text" name="ASE" style="background-color: white" size="10" maxlength="50" prompt="Enter Average Shareholders' Equity"/>
+				<br>
+				<input type="button" value="Calculate All" ONClick="AssetTO(); RecTO(); InventTO(); AvgDayInventory(); PMsales(); ReturnonAssets(); ROE(); ">
+				<input type="button" value="Clear" ONClick="this.form.reset();document.Profitable.reset(); document.AssetTurn.reset()">
+			</form>
+					
+				
+			
+			
+	</center>
+	<hr /> 
+	
+	
+	<center>
+	<table width="90%">
 
-<h1>Profitability Ratios</h1></center>
+		<tr>
+			<td width="50%">
+				<table width="95%">
+				<tr>
+					<td colspan="2">
+						<form name=Profitable>
+						<center><h1>Profitability Ratios</h1></center>
+						
+					</td>
+				</tr>
+				<tr>
+					<td width="55%">
+						<h2 style="text-align:right;">Profit Margin on Sales</h2>
+					</td>
+					<td width="45%">
+							<input type="text" name="ProfitMargin" style="background-color: white" size="5" maxlength="5" disabled/>
+							<a Title="Profit Margin of Sales: This percentage represents the percent of your revenues that is Net Income. For example if you have a Profit Margin of Sales of 10% this means you make 10 cents in profit for every dollar of revenues."> <img height="15" width="15" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
+					<input type="button" value="Calculate" ONClick="PMsales()">	
+					</td>
+				</tr>
+				<tr>
+					<td width="55%">
+						<h2 style="text-align:right;">Return on Assets</h2>
+					</td>
+					<td width="45%">
+							<input type="text" name="ReturnOnAssets" style="background-color: white" size="5" maxlength="5" disabled/>
+							<a Title="Return on Assets: This percentage represents the percent of your assets that is Net Income. For example if you have a Returnon Assets of 10% this means you make 10 cents in profit for every dollar of assets."> <img height="15" width="15" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
+					<input type="button" value="Calculate" ONClick="ReturnonAssets()">
+	
+					</td>
+				</tr>
+				<tr>
+					<td width="55%">
+						<h2 style="text-align:right;">Return on Equity</h2>
+					</td>
+					<td width="45%">
+							<input type="text" name="ReturnOnSOE" style="background-color: white" size="5" maxlength="5" disabled/>
+							<a Title="Return on Equity: This percentage represents the percent of your equity that is Net Income. For example if you have a Return on Equity of 10% this means you make 10 cents in profit for every dollar of equity."> <img height="15" width="15" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
+					<input type="button" value="Calcuate" ONClick="ROE()">
 
-<h2>Profit Margin on Sales</h2><br>
-<form name=Profitable>
-<input type="text" name="ProfitMargin" style="background-color: white" size="5" maxlength="5" disabled/>
-<a Title="Profit Margin of Sales:
-This percentage represents the percent of your revenues 
-that is Net Income.For example if you have a Profit 
-Margin of Sales of 10% this means you make 10 cents in 
-profit for every dollar of revenues."> <img height="25" width="25" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<h2>&nbsp;</h2>
+						</form>
+					</td>
+				</tr>
+				</table>
+			</td>
+			
+			<td width="50%">
+	
+		
+	
+				<table width="95%">
+				
+				<tr>
+					<td colspan=2>
+					<form Name=AssetTurn>
+						<center><h1>Activity Analysis</h1></center>
+					</td>
+				</tr>
+				<tr>
+					<td width="55%">
+						<h2 style="text-align:right;">Asset Turnover</h2>
+					</td>
+					<td width="45%">
+							<input type="text" name="AssetTurnover" style="background-color: white" size="10" maxlength="50" disabled/>
+							<a Title="Asset Turnover: This represents how often assets turn over given sales in the balance sheet. Shows how productive your assets are.  The more the better greater than 1.""> <img height="15" width="15" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
+				<input type="button" value="Calculate" ONClick="AssetTO()">
+					</td>
+				</tr>
+				<tr>
+					<td width="55%">
+						<h2 style="text-align:right;">Receivables Turnover</h2>
+					</td>
+					<td width="45%">		
+							<input type="text" name="RecTurnover" style="background-color: white" size="10" maxlength="50" disabled/>
+							<a Title="Receivables Turnover: This number represents how many times receivables turn a period of time.  If receivable turnover is low you may have a cash flow problem. A low ratio implies the company should re-assess its credit policies in order to ensure the timely collection of imparted credit that is not earning interest for the firm."> <img height="15" width="15" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
+					<input type="button" value="Calculate" ONClick="RecTO()">
 
-<h2>Return on Assets</h2>
-<input type="text" name="ReturnOnAssets" style="background-color: white" size="5" maxlength="5" disabled/>
-<a Title="Return on Assets:
-This percentage represents the percent of your assets 
-that is Net Income.For example if you have a Return
-on Assets of 10% this means you make 10 cents in 
-profit for every dollar of assets."> <img height="25" width="25" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
+					</td>
+				</tr>
+				<tr>
+					<td width="55%">
+						<h2 style="text-align:right;">Inventory Turnover</h2>
+					</td>
+					<td width="45%">
+							<input type="text" name="InvTurnover" style="background-color: white" size="10" maxlength="50" disabled/>
+							<a Title="Inventory Turnover: This ratio should be compared against industry averages. A low turnover implies poor sales and, therefore, excess inventory. A high ratio implies either strong sales or ineffective buying. High inventory levels are unhealthy because they represent an investment with a rate of return of zero. It also opens the company up to trouble should prices begin to fall."> <img height="15" width="15" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
+					<input type="button" value="Calculate" ONClick="InventTO()">
 
-<h2>Return on Equity</h2>
-<input type="text" name="ReturnOnSOE" style="background-color: white" size="5" maxlength="5" disabled/>
-<a Title="Return on Equity:
-This percentage represents the percent of your equity 
-that is Net Income.For example if you have a Return 
-on Equity of 10% this means you make 10 cents in 
-profitfor every dollar of equity."> <img height="25" width="25" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
-</form>
-<hr />
+					</td>
+				</tr>
+				<tr>
+					<td width="55%">
+						<h2 style="text-align:right;">Average Days in Inventory</h2>
+					</td>
+					<td width="45%">
+							<input type="text" name="AvDayInv" style="background-color: white" size="10" maxlength="50" disabled/>
+							<a Title="Average Days in Inventory: The average number of days it takes one piece of inventory to get out the warehouse.  The lower thebetter depends on your type of business."> <img height="15" width="15" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
+					</form>
+					</td>
+				</tr>
 
 
-<center>
-<h1>Activity Analysis</h1></center>
+				</table>
+			</td>
+		</tr>
+		
+	</table>
+	</center>
 
-<h2>Asset Turnover</h2><br>
-<form Name=AssetTurn>
-<input type="text" name="AssetTurnover" style="background-color: white" size="10" maxlength="50" disabled/>
-<a Title="Asset Turnover:
-This represents how often assets turn over 
-given sales in the balance sheet. Shows 
-how productive your assets are.  The more
-the better greater than 1."> <img height="25" width="25" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
-
-<h2>Recievables Turnover</h2>
-<input type="text" name="RecTurnover" style="background-color: white" size="10" maxlength="50" disabled/>
-<a Title="Recievables Turnover:
-This number represents how many times recievables
-turn a period of time.  If recievable turnover is
-low you may have a cash flow problem. A low ratio 
-implies the company should re-assess its credit
- policies in order to ensure the timely 
- collection of imparted credit that is not 
- earning interest for the firm."> <img height="25" width="25" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
-
-<h2>Average Days in Inventory</h2>
-<input type="text" name="AvDayInv" style="background-color: white" size="10" maxlength="50" disabled/>
-<a Title="Average Days in Inventory:
-The average number of days it takes one piece of 
-inventory to get out the warehouse.  The lower the
-better depends on your type of business."> <img height="25" width="25" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
-
-<h2>Inventory Turnover</h2>
-<input type="text" name="InvTurnover" style="background-color: white" size="10" maxlength="50" disabled/>
-<a Title="Inventory Turnover:
-This ratio should be compared against industry
- averages. A low turnover implies poor sales and,
- therefore, excess inventory. A high ratio implies
- either strong sales or ineffective buying.
-High inventory levels are unhealthy because 
-they represent an investment with a rate of 
-return of zero. It also opens the company up
- to trouble should prices begin to fall."> <img height="25" width="25" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
-
-</form>
-<hr />
-<center>
-<a name="CosterV"><h1>Cost Volume Profit Analysis</h1></a>
-<p> 
-<h2>Cost Volume-Profit Analysis studies the behavior and relationship among elements of total revenues, total costs, and income<br>
+	<hr />
+	<center>
+		<a name="CosterV"><h1>Cost Volume Profit Analysis</h1></a>
+		<p> 
+		<h2>Cost Volume-Profit Analysis studies the behavior and relationship among elements of total revenues, total costs, and income<br>
 as changes occur in the units sold, the selling price, the variable cost per unit, or fixed costs of a product.<br></h2>
-</p></center>
-<br>
-<form name=CVP>
-<h3>STEP #1:</h3>
-<br>
-<h3>
-What is your selling price?<input type="text" name="SellingPrice" style="background-color: white" size="10" maxlength="50"/><br>
-What is your Variable Cost per unit?<input type="text" name="VCperUnit" style="background-color: white" size="10" maxlength="50"/><br>
-What are your total Fixed Cost?<input type="text" name="FC" style="background-color: white" size="10" maxlength="50"/><br>
-What is your Target Net Income?<input type="text" name="TargetNI" style="background-color: white" size="10" maxlength="50"/><br>
-What is your Tax Rate?<input type="text" name="TXrate" style="background-color: white" size="10" maxlength="50"/><br>
-How many units did you sell?<input type="text" name="volume" style="background-color: white" size="10" maxlength="50"/><br>
-<input type="button" value="Analyze" ONClick="CVP1(document.CVP.SellingPrice.value)">
-<hr />
-<center>
-Contribution Margin Per Unit:
-<input type="text" name="CM" style="background-color: white" size="10" maxlength="5" disabled/>
-<a Title="Contribution Margin Per unit:
-This represent that marginal profit per unit of sale. 
-The amount per unit that will be applied to fixed cost
-which increases operating income. The amount of your 
-selling price over your variable cost per unit."> <img height="25" width="25" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
+		</p>
+	</center>
+	<br>
+	<form name=CVP>
+		<h3>STEP #1:</h3>
+		<br>
+		<h3>
+			What is your selling price?<input type="text" name="SellingPrice" style="background-color: white" size="10" maxlength="50"/><br>
+			What is your Variable Cost per unit?<input type="text" name="VCperUnit" style="background-color: white" size="10" maxlength="50"/><br>
+			What are your total Fixed Cost?<input type="text" name="FC" style="background-color: white" size="10" maxlength="50"/><br>
+			What is your Target Net Income?<input type="text" name="TargetNI" style="background-color: white" size="10" maxlength="50"/><br>
+			What is your Tax Rate?<input type="text" name="TXrate" style="background-color: white" size="10" maxlength="50"/><br>
+			How many units did you sell?<input type="text" name="volume" style="background-color: white" size="10" maxlength="50"/><br>
+			<input type="button" value="Analyze" ONClick="CVP1()">
+		<hr />
+		<center>
+			Contribution Margin Per Unit:
+			<input type="text" name="CM" style="background-color: white" size="10" maxlength="5" disabled/>
+			<a Title="Contribution Margin Per unit: This represent that marginal profit per unit of sale. The amount per unit that will be applied to fixed cost which increases operating income. The amount of your selling price over your variable cost per unit."> <img height="15" width="15" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
 
-Contribution Margin Percentage:
-<input type="text" name="CMP" style="background-color: white" size="10" maxlength="5" disabled/>
-<a Title="Contribution Margin Percentage:
-This percentage represents the percent of your revenues 
-that is Contribution Margin. If your have a 
-Contribution Margin of $10 and sales of $100 then
-your margin % will be 10%."> <img height="25" width="25" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
+			Contribution Margin Percentage:
+			<input type="text" name="CMP" style="background-color: white" size="10" maxlength="5" disabled/>
+			<a Title="Contribution Margin Percentage: This percentage represents the percent of your revenues that is Contribution Margin. If your have a Contribution Margin of $10 and sales of $100 then your margin % will be 10%."> <img height="15" width="15" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
 
-Breakeven Units:
-<input type="text" name="BreakevenUnits" style="background-color: white" size="5" maxlength="5" disabled/>
-<a Title="Breakeven Units:
-The numbers of units you must sell to 
-cover your fixed and variable cost 
-and make zero profit."> <img height="25" width="25" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
-<br>
+			Breakeven Units:
+			<input type="text" name="BreakevenUnits" style="background-color: white" size="5" maxlength="5" disabled/>
+			<a Title="Breakeven Units: The numbers of units you must sell to cover your fixed and variable cost and make zero profit."> <img height="15" width="15" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
+			<br>
 
-Breakeven Revenues:
-<input type="text" name="BreakevenRevenues" style="background-color: white" size="5" maxlength="5" disabled/>
-<a Title="Breakeven Revenues:
-The amount of revenues you need to earn to cover
-your fixed and varaible cost and make zero
-profit."> <img height="25" width="25" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
+			Breakeven Revenues:
+			<input type="text" name="BreakevenRevenues" style="background-color: white" size="5" maxlength="5" disabled/>
+			<a Title="Breakeven Revenues: The amount of revenues you need to earn to cover your fixed and varaible cost and make zero profit."> <img height="15" width="15" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
 
-Revenues to reach target income:
-<input type="text" name="RevenuesTI" style="background-color: white" size="5" maxlength="5" disabled/>
-<a Title="Profit Margin of Sales:
-This percentage represents the percent of your revenues 
-that is Net Income.For example if you have a Profit 
-Margin of Sales of 10% this means youmake 10 cents in 
-profitfor every dollar of revenues."> <img height="25" width="25" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
+			Revenues to reach target income:
+			<input type="text" name="RevenuesTI" style="background-color: white" size="5" maxlength="5" disabled/>
+			<a Title="Profit Margin of Sales:
+			This percentage represents the percent of your revenues 
+			that is Net Income.For example if you have a Profit 
+			Margin of Sales of 10% this means youmake 10 cents in 
+			profit for every dollar of revenues."> <img height="15" width="15" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
 
-Contribution Margin:
-<input type="text" name="ContributionMargin" style="background-color: white" size="5" maxlength="5" disabled/>
-<a Title="Profit Margin of Sales:
-This percentage represents the percent of your revenues 
-that is Net Income.For example if you have a Profit 
-Margin of Sales of 10% this means youmake 10 cents in 
-profitfor every dollar of revenues."> <img height="25" width="25" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
+			Contribution Margin:
+			<input type="text" name="ContributionMargin" style="background-color: white" size="5" maxlength="5" disabled/>
+			<a Title="Profit Margin of Sales:
+			This percentage represents the percent of your revenues 
+			that is Net Income.For example if you have a Profit 
+			Margin of Sales of 10% this means youmake 10 cents in 
+			profitfor every dollar of revenues."> <img height="15" width="15" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
 
-Operating Leverage:
-<input type="text" name="OP" style="background-color: white" size="5" maxlength="5" disabled/>
-<a Title="Profit Margin of Sales:
-This percentage represents the percent of your revenues 
-that is Net Income.For example if you have a Profit 
-Margin of Sales of 10% this means youmake 10 cents in 
-profitfor every dollar of revenues."> <img height="25" width="25" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
-</center>
-</h3>
-</form>
+			Operating Leverage:
+			<input type="text" name="OP" style="background-color: white" size="5" maxlength="5" disabled/>
+			<a Title="Profit Margin of Sales:
+			This percentage represents the percent of your revenues 
+			that is Net Income.For example if you have a Profit 
+			Margin of Sales of 10% this means youmake 10 cents in 
+			profitfor every dollar of revenues."> <img height="15" width="15" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
+		</center>
+		</h3>
+	</form>
 
 
 </body>
