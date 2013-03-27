@@ -1,1 +1,48 @@
-http://www.financeformulas.net/Present_Value.html#Calc-Header
+
+<!Doctype html>
+<html>
+<meta charset="utf-8">
+<head>
+<title>Small Business Analysis</title>
+</head>
+<script Language="Javascript">
+
+</script>
+
+<body bgcolor="#AAAAAA">  
+  <center><h1><strong>Capital Budgeting</h1></strong></center>	
+  <form name=CB>
+  	<h2>Put in request information:</h2>
+  	<h3>
+  		Net Initial Investment:<input type="text" name="Investment" style="background-color: white" size="10" maxlength="50"/><br>
+  		Useful life:<input type="text" name="Life" style="background-color: white" size="10" maxlength="50"/><br>
+  		Estimated Annual Cashflow:<input type="text" name="Annual Cashflow" style="background-color: white" size="10" maxlength="50"/><br>
+  		Required Rate of Return:<input type="text" name="Hurdlerate" style="background-color: white" size="10" maxlength="50"/><br>
+  		Investment in working Capital:<input type="text" name="InvestmentinWC" style="background-color: white" size="10" maxlength="50"/><br>
+  		Tax Rate:<input type="text" name="TxRate" style="background-color: white" size="10" maxlength="50"/><br>
+  		Inflation:<input type="text" name="inflation" style="background-color: white" size="10" maxlength="50"/><br>
+  		Salvage value of Investment at the end of Useful life:<input type="text" name="Salvage" style="background-color: white" size="10" maxlength="50"/><br>
+  		<input type="button" value="Analyze" ONClick="CB()">
+  	<hr />
+  	Net Present Value:
+  		<input type="text" name="NPV" style="background-color: white" size="10" maxlength="5" disabled/>
+  		<a Title="Contribution Margin Per unit: This represent that marginal profit per unit of sale. The amount per unit that will be applied to fixed cost which increases operating income. The amount of your selling price over your variable cost per unit."> <img height="15" width="15" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
+  	Internal Rate of Return:
+  		<input type="text" name="IRR" style="background-color: white" size="10" maxlength="5" disabled/>
+  		<a Title="Contribution Margin Per unit: This represent that marginal profit per unit of sale. The amount per unit that will be applied to fixed cost which increases operating income. The amount of your selling price over your variable cost per unit."> <img height="15" width="15" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
+  	Payback:
+  		<input type="text" name="Payback" style="background-color: white" size="10" maxlength="5" disabled/>
+  		<a Title="Contribution Margin Per unit: This represent that marginal profit per unit of sale. The amount per unit that will be applied to fixed cost which increases operating income. The amount of your selling price over your variable cost per unit."> <img height="15" width="15" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
+  	Accural Accounting rate of return:
+  		<input type="text" name="AARR" style="background-color: white" size="10" maxlength="5" disabled/>
+  		<a Title="Contribution Margin Per unit: This represent that marginal profit per unit of sale. The amount per unit that will be applied to fixed cost which increases operating income. The amount of your selling price over your variable cost per unit."> <img height="15" width="15" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
+  	Nominal Rate of Return:
+  		<input type="text" name="NominalRateofReturn" style="background-color: white" size="10" maxlength="5" disabled/>
+  		<a Title="Contribution Margin Per unit: This represent that marginal profit per unit of sale. The amount per unit that will be applied to fixed cost which increases operating income. The amount of your selling price over your variable cost per unit."> <img height="15" width="15" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
+
+  	</h3>
+  </form>
+  
+  
+</body>
+</html>
