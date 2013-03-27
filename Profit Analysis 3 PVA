@@ -6,7 +6,7 @@
 </head>
 <script Language="Javascript">
 function CB(){
-  document.Capital.Payback.value=((document.Capital.Investment.value)/(document.Capital.AnnualCashflow.value)).toFixed(2) +" years";
+  	document.Capital.Payback.value=((document.Capital.Investment.value)/(document.Capital.AnnualCashflow.value)).toFixed(2) +" years";
 	document.Capital.NPV.value=(document.Capital.AnnualCashflow.value*((1/(document.Capital.Hurdlerate.value))(1-(1/((1+(document.Capital.Hurdlerate.value))^(document.Capital.Life.value)))))-((document.Capital.Investment.value)+(document.Capital.Investmentin_WC.value)-(document.Capital.Salvage.value)))
 }
 </script>
