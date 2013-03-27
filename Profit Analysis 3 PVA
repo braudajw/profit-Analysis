@@ -5,17 +5,20 @@
 <title>Small Business Analysis</title>
 </head>
 <script Language="Javascript">
-
+function CB(){
+  document.Capital.Payback.value=((document.Capital.Investment.value)/(document.Capital.AnnualCashflow.value)).toFixed(2) +" years";
+	document.Capital.NPV.value=(document.Capital.AnnualCashflow.value*((1/(document.Capital.Hurdlerate.value))(1-(1/((1+(document.Capital.Hurdlerate.value))^(document.Capital.Life.value)))))-((document.Capital.Investment.value)+(document.Capital.Investmentin_WC.value)-(document.Capital.Salvage.value)))
+}
 </script>
 
 <body bgcolor="#AAAAAA">  
   <center><h1><strong>Capital Budgeting</h1></strong></center>	
-  <form name=CB>
+  <form name=Capital>
   	<h2>Put in request information:</h2>
   	<h3>
   		Net Initial Investment:<input type="text" name="Investment" style="background-color: white" size="10" maxlength="50"/><br>
   		Useful life:<input type="text" name="Life" style="background-color: white" size="10" maxlength="50"/><br>
-  		Estimated Annual Cashflow:<input type="text" name="Annual Cashflow" style="background-color: white" size="10" maxlength="50"/><br>
+  		Estimated Annual Cashflow:<input type="text" name="AnnualCashflow" style="background-color: white" size="10" maxlength="50"/><br>
   		Required Rate of Return:<input type="text" name="Hurdlerate" style="background-color: white" size="10" maxlength="50"/><br>
   		Investment in working Capital:<input type="text" name="Investmentin_WC" style="background-color: white" size="10" maxlength="50"/><br>
   		Tax Rate:<input type="text" name="TxRate" style="background-color: white" size="10" maxlength="50"/><br>
@@ -41,6 +44,7 @@
 
   	</h3>
   </form>
+  
   
   
 </body>
