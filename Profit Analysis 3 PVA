@@ -7,7 +7,11 @@
 <script Language="Javascript">
 function CB(){
   	document.Capital.Payback.value=((document.Capital.Investment.value)/(document.Capital.AnnualCashflow.value)).toFixed(2) +" years";
-	document.Capital.NPV.value=(document.Capital.AnnualCashflow.value*((1/(document.Capital.Hurdlerate.value))(1-(1/((1+(document.Capital.Hurdlerate.value))^(document.Capital.Life.value)))))-((document.Capital.Investment.value)+(document.Capital.Investmentin_WC.value)-(document.Capital.Salvage.value)))
+	document.Capital.NPV.value=((document.Capital.AnnualCashflow.value)*((1/(document.Capital.Hurdlerate.value))(1-(1/((1+(document.Capital.Hurdlerate.value))^(document.Capital.Life.value)))))-((document.Capital.Investment.value)+(document.Capital.Investmentin_WC.value)-(document.Capital.Salvage.value)))
+	}
+function CB1(){
+document.Capital.AnnualCashflow.value=((1.1)*(document.Capital.AnnualCashflow.value)).toFixed(2);
+document.Capital.Payback.value=((document.Capital.Investment.value)/(document.Capital.AnnualCashflow.value)).toFixed(2) +" years"
 }
 </script>
 
@@ -25,6 +29,8 @@ function CB(){
   		Inflation:<input type="text" name="inflation" style="background-color: white" size="10" maxlength="50"/><br>
   		Salvage value of Investment at the end of Useful life:<input type="text" name="Salvage" style="background-color: white" size="10" maxlength="50"/><br>
   		<input type="button" value="Analyze" ONClick="CB()">
+		<input type="button" value="Clear All" ONClick="this.form.reset(); document.Capital.reset()">
+		<input type="button" value="10% increase in Cashflow" ONClick="CB1()">
   	<hr />
   	Net Present Value:
   		<input type="text" name="NPV" style="background-color: white" size="10" maxlength="5" disabled/>
