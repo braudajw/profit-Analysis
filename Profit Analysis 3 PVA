@@ -18,7 +18,7 @@ document.Capital.Payback.value=((document.Capital.Investment.value)/(document.Ca
 <body bgcolor="#AAAAAA">  
   <center><h1><strong>Capital Budgeting</h1></strong></center>	
   <form name=Capital>
-  	<h2>Put in request information:</h2>
+  	<h2>Please add requested information:</h2>
   	<h3>
   		Net Initial Investment:<input type="text" name="Investment" style="background-color: white" size="10" maxlength="50"/><br>
   		Useful life:<input type="text" name="Life" style="background-color: white" size="10" maxlength="50"/><br>
