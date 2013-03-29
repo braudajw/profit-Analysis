@@ -6,7 +6,7 @@
 </head>
 <script Language="Javascript">
 function CB(){
-  	document.Capital.Payback.value=((document.Capital.Investment.value)/(document.Capital.AnnualCashflow.value)).toFixed(2) +" years";
+  	document.Capital.Payback.value=((document.Capital.Investment.value)/((document.Capital.AnnualCashflow.value)*(1-(document.Capital.TxRate.value)))).toFixed(2) +" years";
 	document.Capital.NPV.value=((document.Capital.AnnualCashflow.value)*((1/(document.Capital.Hurdlerate.value))(1-(1/((1+(document.Capital.Hurdlerate.value))^(document.Capital.Life.value)))))-((document.Capital.Investment.value)+(document.Capital.Investmentin_WC.value)-(document.Capital.Salvage.value)))
 	}
 function CB1(){
@@ -23,14 +23,23 @@ document.Capital.Payback.value=((document.Capital.Investment.value)/(document.Ca
   		Net Initial Investment:<input type="text" name="Investment" style="background-color: white" size="10" maxlength="50"/><br>
   		Useful life:<input type="text" name="Life" style="background-color: white" size="10" maxlength="50"/><br>
   		Estimated Annual Cashflow:<input type="text" name="AnnualCashflow" style="background-color: white" size="10" maxlength="50"/><br>
-  		Required Rate of Return:<input type="text" name="Hurdlerate" style="background-color: white" size="10" maxlength="50"/><br>
+  		Required Rate of Return(in decimal form):<input type="text" name="Hurdlerate" style="background-color: white" size="10" maxlength="50"/><br>
   		Investment in working Capital:<input type="text" name="Investmentin_WC" style="background-color: white" size="10" maxlength="50"/><br>
-  		Tax Rate:<input type="text" name="TxRate" style="background-color: white" size="10" maxlength="50"/><br>
-  		Inflation:<input type="text" name="inflation" style="background-color: white" size="10" maxlength="50"/><br>
+  		Tax Rate(in decimal form):<input type="text" name="TxRate" style="background-color: white" size="10" maxlength="50"/><br>
   		Salvage value of Investment at the end of Useful life:<input type="text" name="Salvage" style="background-color: white" size="10" maxlength="50"/><br>
+		Increase in Annual Cashflow:<input type="text" name="Salvage" style="background-color: white" size="10" maxlength="50"/><br>
   		<input type="button" value="Analyze" ONClick="CB()">
 		<input type="button" value="Clear All" ONClick="this.form.reset(); document.Capital.reset()">
 		<input type="button" value="10% increase in Cashflow" ONClick="CB1()">
+		 <form name="myform" action="http://www.mydomain.com/myformhandler.cgi" method="POST">
+<select name="mydropdown">
+<option value="10%">10%</option>
+<option value="20%">20%</option>
+<option value="30%">30%</option>
+</select>
+</div>
+</form>
+
   	<hr />
   	Net Present Value:
   		<input type="text" name="NPV" style="background-color: white" size="10" maxlength="5" disabled/>
