@@ -5,14 +5,28 @@
 <title>Small Business Analysis</title>
 </head>
 <script Language="Javascript">
+
+
+
 function CB(){
-  	document.Capital.Payback.value=((document.Capital.Investment.value)/((document.Capital.AnnualCashflow.value)*(1-(document.Capital.TxRate.value)))).toFixed(2) +" years";
-	document.Capital.NPV.value=((document.Capital.AnnualCashflow.value)*((1/(document.Capital.Hurdlerate.value))(1-(1/((1+(document.Capital.Hurdlerate.value))^(document.Capital.Life.value)))))-((document.Capital.Investment.value)+(document.Capital.Investmentin_WC.value)-(document.Capital.Salvage.value)))
+
+var Investment = document.Capital.Investment.value;
+var AnnualCashflow = document.Capital.AnnualCashflow.value;
+var TxRate = document.Capital.TxRate.value;
+var Hurdlerate = document.Capital.Hurdlerate.value;
+var Life = document.Capital.Life.value;
+var Investmentin_WC = document.Capital.Investmentin_WC.value;
+var Salvage = document.Capital.Salvage.value;
+
+  	document.Capital.Payback.value=((Investment)/((AnnualCashflow)*(1-(TxRate)))).toFixed(2) +" years";
+	document.Capital.NPV.value=((AnnualCashflow)*((1/(Hurdlerate))(1-(1/((1+(Hurdlerate))^(Life)))))-((Investment)+(Investmentin_WC)-(Salvage)))
 	}
+	
 function CB1(){
 document.Capital.AnnualCashflow.value=((1.1)*(document.Capital.AnnualCashflow.value)).toFixed(2);
 document.Capital.Payback.value=((document.Capital.Investment.value)/(document.Capital.AnnualCashflow.value)).toFixed(2) +" years"
 }
+
 </script>
 
 <body bgcolor="#AAAAAA">  
