@@ -70,36 +70,40 @@ document.Capital.Payback.value=((document.Capital.Investment.value)/(document.Ca
   	Nominal Rate of Return:
   		<input type="text" name="NominalRateofReturn" style="background-color: white" size="10" maxlength="5" disabled/>
   		<a Title="Contribution Margin Per unit: This represent that marginal profit per unit of sale. The amount per unit that will be applied to fixed cost which increases operating income. The amount of your selling price over your variable cost per unit."> <img height="15" width="15" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
-
+	
   	</h3>
   </form>
 
-<table id="myTable" border="3" style="background-color: white">
+	<table id="myTable" border="3">
   <tr>
+	<td>Measure</td>
 	<td>Quarter 1</td>
 	<td>Quarter 2</td>
 	<td>Quarter 3</td>
 	<td>Quarter 4</td>
   </tr>
   <tr>
+	<td>NPV:</td>
     <td><input type="text" name="NPV" style="background-color: white" size="10" maxLength="5" disabled/></td>
 	<td><input type="text" name="NPV" style="background-color: white" size="10" maxLength="5" disabled/></td>
 	<td><input type="text" name="NPV" style="background-color: white" size="10" maxLength="5" disabled/></td>
     <<td><input type="text" name="NPV" style="background-color: white" size="10" maxLength="5" disabled/></td>
   </tr>
   <tr>
+	<td>IRR:</td>
     <td><input type="text" name="IRR" style="background-color: white" size="10" maxLength="5" disabled/></td>
     <td><input type="text" name="IRR" style="background-color: white" size="10" maxLength="5" disabled/></td>
 	<td><input type="text" name="IRR" style="background-color: white" size="10" maxLength="5" disabled/></td>
 	<td><input type="text" name="IRR" style="background-color: white" size="10" maxLength="5" disabled/></td>
   </tr>
   <tr>
+	<td>Payback:</td>
 	<td><input type="text" name="Payback" style="background-color: white" size="10" maxLength="5" disabled/></td>
 	<td><input type="text" name="Payback" style="background-color: white" size="10" maxLength="5" disabled/></td>
 	<td><input type="text" name="Payback" style="background-color: white" size="10" maxLength="5" disabled/></td>
 	<td><input type="text" name="Payback" style="background-color: white" size="10" maxLength="5" disabled/></td>
   </tr>
-</table>
+	</table>
   
   
   
