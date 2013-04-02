@@ -73,6 +73,33 @@ document.Capital.Payback.value=((document.Capital.Investment.value)/(document.Ca
 
   	</h3>
   </form>
+
+<table id="myTable" border="3" style="background-color: white">
+  <tr>
+	<td>Quarter 1</td>
+	<td>Quarter 2</td>
+	<td>Quarter 3</td>
+	<td>Quarter 4</td>
+  </tr>
+  <tr>
+    <td><input type="text" name="NPV" style="background-color: white" size="10" maxLength="5" disabled/></td>
+	<td><input type="text" name="NPV" style="background-color: white" size="10" maxLength="5" disabled/></td>
+	<td><input type="text" name="NPV" style="background-color: white" size="10" maxLength="5" disabled/></td>
+    <<td><input type="text" name="NPV" style="background-color: white" size="10" maxLength="5" disabled/></td>
+  </tr>
+  <tr>
+    <td><input type="text" name="IRR" style="background-color: white" size="10" maxLength="5" disabled/></td>
+    <td><input type="text" name="IRR" style="background-color: white" size="10" maxLength="5" disabled/></td>
+	<td><input type="text" name="IRR" style="background-color: white" size="10" maxLength="5" disabled/></td>
+	<td><input type="text" name="IRR" style="background-color: white" size="10" maxLength="5" disabled/></td>
+  </tr>
+  <tr>
+	<td><input type="text" name="Payback" style="background-color: white" size="10" maxLength="5" disabled/></td>
+	<td><input type="text" name="Payback" style="background-color: white" size="10" maxLength="5" disabled/></td>
+	<td><input type="text" name="Payback" style="background-color: white" size="10" maxLength="5" disabled/></td>
+	<td><input type="text" name="Payback" style="background-color: white" size="10" maxLength="5" disabled/></td>
+  </tr>
+</table>
   
   
   
