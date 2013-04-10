@@ -19,7 +19,7 @@ var Investmentin_WC = document.Capital.Investmentin_WC.value;
 var Salvage = document.Capital.Salvage.value;
 
   	document.Capital.Payback.value=((Investment)/((AnnualCashflow)*(1-(TxRate)))).toFixed(2) +" years";
-	document.Capital.NPV.value=((AnnualCashflow)*((1/(Hurdlerate))(1-(1/((1+(Hurdlerate))^(Life)))))-((Investment)+(Investmentin_WC)-(Salvage)))
+	document.Capital.NPV.value=((AnnualCashflow)*((1/(Hurdlerate))(1-(1/(Math.pow((1+(Hurdlerate), Life)))))-((Investment)+(Investmentin_WC)-(Salvage)))
 	}
 	
 function CB1(){
@@ -73,39 +73,133 @@ document.Capital.Payback.value=((document.Capital.Investment.value)/(document.Ca
 	
   	</h3>
   </form>
-
-	<table id="myTable" border="3">
+  <h3>Non-Uniform Cash flows</h3>
+  <table id="myTable" border="4">
   <tr>
-	<td>Measure</td>
-	<td>Quarter 1</td>
-	<td>Quarter 2</td>
-	<td>Quarter 3</td>
-	<td>Quarter 4</td>
+	<td>Discout Rate</td>
+	<td><input type="text" name="DiscountRate"</td>
+	<td>Cash Flows</td>
+	</tr>
+  <tr>
+	<td>Time of Receipt</td>
+	<td>Year</td>
+	<td>Cash in</td>
+	<td>Cash Out</td>
+	<td>Net Cash flow</td>
+	<td>Discount Factor</td>
+	<td>Discounted Cashflow</td>
+	</tr>
+  <tr>
+	<td>Beginning 1</td>
+    <td><input type="text" name="Year" value="0" size="10" maxLength="5" disabled/></td>
+	<td><input type="text" name="Cashin0" style="background-color: white" size="10" maxLength="5" /></td>
+	<td><input type="text" name="Cashout0" style="background-color: white" size="10" maxLength="5" /></td>
+    <td><input type="text" name="NCF0" style="background-color: white" size="10" maxLength="5" disabled/></td>
+	<td><input type="text" name="Discount0" style="background-color: white" size="15" maxLength="5" disabled/></td>
+	<td><input type="text" name="DiscountedCF0" style="background-color: white" size="15" maxLength="5" disabled/></td>
   </tr>
   <tr>
+	<td>End Year 1</td>
+    <td><input type="text" name="Year1" value="1" size="10" maxLength="5" disabled/></td>
+	<td><input type="text" name="Cashin1" style="background-color: white" size="10" maxLength="5" /></td>
+	<td><input type="text" name="Cashout1" style="background-color: white" size="10" maxLength="5" /></td>
+    <td><input type="text" name="NCF1" style="background-color: white" size="10" maxLength="5" disabled/></td>
+	<td><input type="text" name="Discount1" style="background-color: white" size="15" maxLength="5" disabled/></td>
+	<td><input type="text" name="DiscountedCF1" style="background-color: white" size="15" maxLength="5" disabled/></td>
+  </tr>
+  <tr>
+	<td>End Year 2</td>
+    <td><input type="text" name="Year2" value="2" size="10" maxLength="5" disabled/></td>
+	<td><input type="text" name="Cashin2" style="background-color: white" size="10" maxLength="5" /></td>
+	<td><input type="text" name="Cashout2" style="background-color: white" size="10" maxLength="5" /></td>
+    <td><input type="text" name="NCF2" style="background-color: white" size="10" maxLength="5" disabled/></td>
+	<td><input type="text" name="Discount2" style="background-color: white" size="15" maxLength="5" disabled/></td>
+	<td><input type="text" name="DiscountedCF2" style="background-color: white" size="15" maxLength="5" disabled/></td>
+  </tr>
+  <tr>
+	<td>End Year 3</td>
+	<td><input type="text" name="Year3" value="3" size="10" maxLength="5" disabled/></td>
+	<td><input type="text" name="Cashin3" style="background-color: white" size="10" maxLength="5" /></td>
+	<td><input type="text" name="Cashout3" style="background-color: white" size="10" maxLength="5" /></td>
+    <<td><input type="text" name="NCF3" style="background-color: white" size="10" maxLength="5" disabled/></td>
+	<td><input type="text" name="Discount3" style="background-color: white" size="15" maxLength="5" disabled/></td>
+	<td><input type="text" name="DiscountedCF3" style="background-color: white" size="15" maxLength="5" disabled/></td>
+  </tr>
+  <tr>
+	<td>End Year 4</td>
+	<td><input type="text" name="Year4" value="4" size="10" maxLength="5" disabled/></td>
+	<td><input type="text" name="Cashin4" style="background-color: white" size="10" maxLength="5" /></td>
+	<td><input type="text" name="Cashout4" style="background-color: white" size="10" maxLength="5" /></td>
+    <td><input type="text" name="NCF4" style="background-color: white" size="10" maxLength="5" disabled/></td>
+	<td><input type="text" name="Discount4" style="background-color: white" size="15" maxLength="5" disabled/></td>
+	<td><input type="text" name="DiscountedCF4" style="background-color: white" size="15" maxLength="5" disabled/></td>
+  </tr>
+  <tr>
+	<td>End Year 5</td>
+	<td><input type="text" name="Year5" value="5" size="10" maxLength="5" disabled/></td>
+	<td><input type="text" name="Cashin5" style="background-color: white" size="10" maxLength="5" /></td>
+	<td><input type="text" name="Cashout5" style="background-color: white" size="10" maxLength="5" /></td>
+    <td><input type="text" name="NCF5" style="background-color: white" size="10" maxLength="5" disabled/></td>
+	<td><input type="text" name="Discount5" style="background-color: white" size="15" maxLength="5" disabled/></td>
+	<td><input type="text" name="DiscountedCF5" style="background-color: white" size="15" maxLength="5" disabled/></td>
+  </tr>
+  <tr>
+	<td>End Year 6</td>
+	<td><input type="text" name="Year6" value="6" size="10" maxLength="5" disabled/></td>
+	<td><input type="text" name="Cashin6" style="background-color: white" size="10" maxLength="5" /></td>
+	<td><input type="text" name="Cashout6" style="background-color: white" size="10" maxLength="5" /></td>
+    <td><input type="text" name="NCF6" style="background-color: white" size="10" maxLength="5" disabled/></td>
+	<td><input type="text" name="Discount6" style="background-color: white" size="15" maxLength="5" disabled/></td>
+	<td><input type="text" name="DiscountedCF6" style="background-color: white" size="15" maxLength="5" disabled/></td>
+  </tr>
+  <tr>
+	<td>End Year 7</td>
+	<td><input type="text" name="Year7" value="7" size="10" maxLength="5" disabled/></td>
+	<td><input type="text" name="Cashin7" style="background-color: white" size="10" maxLength="5" /></td>
+	<td><input type="text" name="Cashout7" style="background-color: white" size="10" maxLength="5" /></td>
+    <td><input type="text" name="NCF7" style="background-color: white" size="10" maxLength="5" disabled/></td>
+	<td><input type="text" name="Discount7" style="background-color: white" size="15" maxLength="5" disabled/></td>
+	<td><input type="text" name="DiscountedCF7" style="background-color: white" size="15" maxLength="5" disabled/></td>
+  </tr>
+  <tr>
+	<td>End Year 8</td>
+	<td><input type="text" name="Year8" value="8" size="10" maxLength="5" disabled/></td>
+	<td><input type="text" name="Cashin8" style="background-color: white" size="10" maxLength="5" /></td>
+	<td><input type="text" name="Cashout8" style="background-color: white" size="10" maxLength="5" /></td>
+    <td><input type="text" name="NCF8" style="background-color: white" size="10" maxLength="5" disabled/></td>
+	<td><input type="text" name="Discount8" style="background-color: white" size="15" maxLength="5" disabled/></td>
+	<td><input type="text" name="DiscountedCF8" style="background-color: white" size="15" maxLength="5" disabled/></td>
+  </tr>
+  <tr>
+	<td>End Year 9</td>
+	<td><input type="text" name="Year9" value="9" size="10" maxLength="5" disabled/></td>
+	<td><input type="text" name="Cashin9" style="background-color: white" size="10" maxLength="5" /></td>
+	<td><input type="text" name="Cashout9" style="background-color: white" size="10" maxLength="5" /></td>
+    <td><input type="text" name="NCF9" style="background-color: white" size="10" maxLength="5" disabled/></td>
+	<td><input type="text" name="Discount9" style="background-color: white" size="15" maxLength="5" disabled/></td>
+	<td><input type="text" name="DiscountedCF9" style="background-color: white" size="15" maxLength="5" disabled/></td>
+  </tr>
+  <tr>
+	<td>End Year 10</td>
+	<td><input type="text" name="Year10" value="10" size="10" maxLength="5" disabled/></td>
+	<td><input type="text" name="Cashin10" style="background-color: white" size="10" maxLength="5" /></td>
+	<td><input type="text" name="Cashout10" style="background-color: white" size="10" maxLength="5" /></td>
+    <td><input type="text" name="NCF10" style="background-color: white" size="10" maxLength="5" disabled/></td>
+	<td><input type="text" name="Discount10" style="background-color: white" size="15" maxLength="5" disabled/></td>
+	<td><input type="text" name="DiscountedCF10" style="background-color: white" size="15" maxLength="5" disabled/></td>
+  </tr>
+  <tr>
+	<td>Totals</td>
+	<td></td>
+	<td><input type="text" name="CashTotal1" style="background-color: white" size="10" maxLength="5" /></td>
+	<td><input type="text" name="CashTotal2" style="background-color: white" size="10" maxLength="5" /></td>
+    <td><input type="text" name="NetCashflow1" style="background-color: white" size="10" maxLength="5" disabled/></td>
 	<td>NPV:</td>
-    <td><input type="text" name="NPV" style="background-color: white" size="10" maxLength="5" disabled/></td>
-	<td><input type="text" name="NPV" style="background-color: white" size="10" maxLength="5" disabled/></td>
-	<td><input type="text" name="NPV" style="background-color: white" size="10" maxLength="5" disabled/></td>
-    <<td><input type="text" name="NPV" style="background-color: white" size="10" maxLength="5" disabled/></td>
+	<td><input type="text" name="NPV" style="background-color: white" size="15" maxLength="5" disabled/></td>
   </tr>
-  <tr>
-	<td>IRR:</td>
-    <td><input type="text" name="IRR" style="background-color: white" size="10" maxLength="5" disabled/></td>
-    <td><input type="text" name="IRR" style="background-color: white" size="10" maxLength="5" disabled/></td>
-	<td><input type="text" name="IRR" style="background-color: white" size="10" maxLength="5" disabled/></td>
-	<td><input type="text" name="IRR" style="background-color: white" size="10" maxLength="5" disabled/></td>
-  </tr>
-  <tr>
-	<td>Payback:</td>
-	<td><input type="text" name="Payback" style="background-color: white" size="10" maxLength="5" disabled/></td>
-	<td><input type="text" name="Payback" style="background-color: white" size="10" maxLength="5" disabled/></td>
-	<td><input type="text" name="Payback" style="background-color: white" size="10" maxLength="5" disabled/></td>
-	<td><input type="text" name="Payback" style="background-color: white" size="10" maxLength="5" disabled/></td>
-  </tr>
+  
 	</table>
   
-  
-  
+   
 </body>
 </html>
