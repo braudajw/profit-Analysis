@@ -19,13 +19,23 @@ var Investmentin_WC = document.Capital.Investmentin_WC.value;
 var Salvage = document.Capital.Salvage.value;
 
   	document.Capital.Payback.value=((Investment)/((AnnualCashflow)*(1-(TxRate)))).toFixed(2) +" years";
-	document.Capital.NPV.value=((AnnualCashflow)*((1/(Hurdlerate))(1-(1/(Math.pow((1+(Hurdlerate), Life)))))-((Investment)+(Investmentin_WC)-(Salvage)))
+	document.Capital.TaxLi.value=(AnnualCashflow-((Investment-Salvage)/(Life)))*TxRate
+//document.Capital.NPV.value=((AnnualCashflow)*((1/(Hurdlerate))(1-(1/(Math.pow((1+(Hurdlerate), Life)))))-((Investment)+(Investmentin_WC)-(Salvage)))
+
+var power=Math.pow((1+Hurdlerate), Life);
+var pv = (1-(1/(Math.pow((1+Hurdlerate), Life))));
+var rate=(1/Hurdlerate);
+var diff=parseInt(Investment,10) + parseInt(Investmentin_WC,10) - Salvage;
+var Annt=AnnualCashflow-(AnnualCashflow-((Investment-Salvage)/Life))*(TxRate);
+document.Capital.NPV.value=(Annt*rate*pv-diff).toFixed(2);
+
 	}
 	
 function CB1(){
 document.Capital.AnnualCashflow.value=((1.1)*(document.Capital.AnnualCashflow.value)).toFixed(2);
 document.Capital.Payback.value=((document.Capital.Investment.value)/(document.Capital.AnnualCashflow.value)).toFixed(2) +" years"
 }
+
 
 </script>
 
@@ -34,46 +44,43 @@ document.Capital.Payback.value=((document.Capital.Investment.value)/(document.Ca
   <form name=Capital>
   	<h2>Please add requested information:</h2>
   	<h3>
-  		Net Initial Investment:<input type="text" name="Investment" style="background-color: white" size="10" maxlength="50"/><br>
+  		Investment:<input type="text" name="Investment" style="background-color: white" size="10" maxlength="50"/><br>
   		Useful life:<input type="text" name="Life" style="background-color: white" size="10" maxlength="50"/><br>
   		Estimated Annual Cashflow:<input type="text" name="AnnualCashflow" style="background-color: white" size="10" maxlength="50"/><br>
   		Required Rate of Return(in decimal form):<input type="text" name="Hurdlerate" style="background-color: white" size="10" maxlength="50"/><br>
   		Investment in working Capital:<input type="text" name="Investmentin_WC" style="background-color: white" size="10" maxlength="50"/><br>
   		Tax Rate(in decimal form):<input type="text" name="TxRate" style="background-color: white" size="10" maxlength="50"/><br>
   		Salvage value of Investment at the end of Useful life:<input type="text" name="Salvage" style="background-color: white" size="10" maxlength="50"/><br>
-		Increase in Annual Cashflow:<input type="text" name="Salvage" style="background-color: white" size="10" maxlength="50"/><br>
+		Increase in Annual Cashflow:<input type="text" name="MAKENEWNAMESalvage" style="background-color: white" size="10" maxlength="50"/><br>
   		<input type="button" value="Analyze" ONClick="CB()">
 		<input type="button" value="Clear All" ONClick="this.form.reset(); document.Capital.reset()">
 		<input type="button" value="10% increase in Cashflow" ONClick="CB1()">
-		 <form name="myform" action="http://www.mydomain.com/myformhandler.cgi" method="POST">
+
+<!--		 <form name="myform" action="http://www.mydomain.com/myformhandler.cgi" method="POST">
 <select name="mydropdown">
 <option value="10%">10%</option>
 <option value="20%">20%</option>
 <option value="30%">30%</option>
 </select>
 </div>
-</form>
+</form> -->
 
   	<hr />
   	Net Present Value:
   		<input type="text" name="NPV" style="background-color: white" size="10" maxlength="5" disabled/>
   		<a Title="Contribution Margin Per unit: This represent that marginal profit per unit of sale. The amount per unit that will be applied to fixed cost which increases operating income. The amount of your selling price over your variable cost per unit."> <img height="15" width="15" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
-  	Internal Rate of Return:
-  		<input type="text" name="IRR" style="background-color: white" size="10" maxlength="5" disabled/>
+  	Tax Liabiltiy:
+  		<input type="text" name="TaxLi" style="background-color: white" size="10" maxlength="5" disabled/>
   		<a Title="Contribution Margin Per unit: This represent that marginal profit per unit of sale. The amount per unit that will be applied to fixed cost which increases operating income. The amount of your selling price over your variable cost per unit."> <img height="15" width="15" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
   	Payback:
   		<input type="text" name="Payback" style="background-color: white" size="10" maxlength="5" disabled/>
   		<a Title="Contribution Margin Per unit: This represent that marginal profit per unit of sale. The amount per unit that will be applied to fixed cost which increases operating income. The amount of your selling price over your variable cost per unit."> <img height="15" width="15" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
-  	Accural Accounting rate of return:
-  		<input type="text" name="AARR" style="background-color: white" size="10" maxlength="5" disabled/>
-  		<a Title="Contribution Margin Per unit: This represent that marginal profit per unit of sale. The amount per unit that will be applied to fixed cost which increases operating income. The amount of your selling price over your variable cost per unit."> <img height="15" width="15" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
-  	Nominal Rate of Return:
-  		<input type="text" name="NominalRateofReturn" style="background-color: white" size="10" maxlength="5" disabled/>
-  		<a Title="Contribution Margin Per unit: This represent that marginal profit per unit of sale. The amount per unit that will be applied to fixed cost which increases operating income. The amount of your selling price over your variable cost per unit."> <img height="15" width="15" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
+ 
 	
   	</h3>
   </form>
-  <h3>Non-Uniform Cash flows</h3>
+
+	<h3>Non-Uniform Cash flows</h3>
   <table id="myTable" border="4">
   <tr>
 	<td>Discout Rate</td>
@@ -91,7 +98,7 @@ document.Capital.Payback.value=((document.Capital.Investment.value)/(document.Ca
 	</tr>
   <tr>
 	<td>Beginning 1</td>
-    <td><input type="text" name="Year" value="0" size="10" maxLength="5" disabled/></td>
+    <td><input type="text" name="Year0" value="0" size="10" maxLength="5" disabled/></td>
 	<td><input type="text" name="Cashin0" style="background-color: white" size="10" maxLength="5" /></td>
 	<td><input type="text" name="Cashout0" style="background-color: white" size="10" maxLength="5" /></td>
     <td><input type="text" name="NCF0" style="background-color: white" size="10" maxLength="5" disabled/></td>
@@ -200,6 +207,7 @@ document.Capital.Payback.value=((document.Capital.Investment.value)/(document.Ca
   
 	</table>
   
-   
+  
+  
 </body>
 </html>
