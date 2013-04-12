@@ -34,7 +34,17 @@ document.Capital.NPV.value=(Annt*rate*pv-diff).toFixed(2);
 function CB1(){
 document.Capital.AnnualCashflow.value=((1.1)*(document.Capital.AnnualCashflow.value)).toFixed(2);
 document.Capital.Payback.value=((document.Capital.Investment.value)/(document.Capital.AnnualCashflow.value)).toFixed(2) +" years"
-}
+	}
+	
+function myFunction(Cashin0,Cashout0)
+{
+if (Cashin0 > Cashout0)
+	{
+	return;
+	}
+NCF0=Cashin0-Cashout0
+}	
+
 
 
 </script>
@@ -79,7 +89,8 @@ document.Capital.Payback.value=((document.Capital.Investment.value)/(document.Ca
 	
   	</h3>
   </form>
-
+  
+<form name=Uniform>
 	<h3>Non-Uniform Cash flows</h3>
   <table id="myTable" border="4">
   <tr>
@@ -207,7 +218,7 @@ document.Capital.Payback.value=((document.Capital.Investment.value)/(document.Ca
   
 	</table>
   
-  
+  </form>
   
 </body>
 </html>
