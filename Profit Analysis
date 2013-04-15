@@ -45,7 +45,7 @@ function CVP1(){
 <body bgcolor="#AAAAAA">
 	<center><h1><strong>Small Business Analysis</h1></strong></center>
 	
-	<a href="#CosterV"><h1>CVP Analysis</h1></a>
+	<a href="file:///C:/ProgramData/Microsoft/Windows/Start%20Menu/Programs/Notepad++/what.html"> Capital Budgeting </a>
 	
 	<center>
 		<h2>Enter Data Below:</h2>
@@ -228,27 +228,23 @@ as changes occur in the units sold, the selling price, the variable cost per uni
 
 			Revenues to reach target income:
 			<input type="text" name="RevenuesTI" style="background-color: white" size="5" maxlength="5" disabled/>
-			<a Title="Profit Margin of Sales:
-			This percentage represents the percent of your revenues 
-			that is Net Income.For example if you have a Profit 
-			Margin of Sales of 10% this means youmake 10 cents in 
-			profit for every dollar of revenues."> <img height="15" width="15" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
+			<a Title="Revenues to Target Income:
+			This number is the amount of revenues to reach 
+			the target income."> <img height="15" width="15" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
 
 			Contribution Margin:
 			<input type="text" name="ContributionMargin" style="background-color: white" size="5" maxlength="5" disabled/>
-			<a Title="Profit Margin of Sales:
-			This percentage represents the percent of your revenues 
-			that is Net Income.For example if you have a Profit 
-			Margin of Sales of 10% this means youmake 10 cents in 
-			profitfor every dollar of revenues."> <img height="15" width="15" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
+			<a Title="Contribution Margin:
+			Revenues minus variable cost that
+			contributes to the fixed cost of an
+			organization."> <img height="15" width="15" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
 
 			Operating Leverage:
 			<input type="text" name="OP" style="background-color: white" size="5" maxlength="5" disabled/>
-			<a Title="Profit Margin of Sales:
-			This percentage represents the percent of your revenues 
-			that is Net Income.For example if you have a Profit 
-			Margin of Sales of 10% this means youmake 10 cents in 
-			profitfor every dollar of revenues."> <img height="15" width="15" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
+			<a Title="Operating leverage:
+			A measure of how increases in revenues affects
+			net income considering how many fixed assets
+			are involved in a business."> <img height="15" width="15" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
 		</center>
 		</h3>
 	</form>
