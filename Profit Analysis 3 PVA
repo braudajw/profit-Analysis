@@ -4,9 +4,8 @@
 <head>
 <title>Small Business Analysis</title>
 </head>
+
 <script Language="Javascript">
-
-
 
 function CB(){
 
@@ -36,13 +35,8 @@ document.Capital.AnnualCashflow.value=((1.1)*(document.Capital.AnnualCashflow.va
 document.Capital.Payback.value=((document.Capital.Investment.value)/(document.Capital.AnnualCashflow.value)).toFixed(2) +" years"
 	}
 	
-function myFunction(Cashin0,Cashout0)
-{
-if (Cashin0 > Cashout0)
-	{
-	return;
-	}
-NCF0=Cashin0-Cashout0
+function CB2(){
+
 }	
 
 
@@ -51,6 +45,7 @@ NCF0=Cashin0-Cashout0
 
 <body bgcolor="#AAAAAA">  
   <center><h1><strong>Capital Budgeting</h1></strong></center>	
+  <a href="file:///C:/ProgramData/Microsoft/Windows/Start%20Menu/Programs/Notepad++/new%20%202.html"> Ratios<a/>
   <form name=Capital>
   	<h2>Please add requested information:</h2>
   	<h3>
