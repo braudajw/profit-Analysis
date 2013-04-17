@@ -1,3 +1,4 @@
+
 <!Doctype html>
 <html>
 <meta charset="utf-8">
@@ -73,13 +74,13 @@ function CB2(){
   	<hr />
   	Net Present Value:
   		<input type="text" name="NPV" style="background-color: white" size="10" maxlength="5" disabled/>
-  		<a Title="Contribution Margin Per unit: This represent that marginal profit per unit of sale. The amount per unit that will be applied to fixed cost which increases operating income. The amount of your selling price over your variable cost per unit."> <img height="15" width="15" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
+  		<a Title="Net Present value is the economic gain or loss as a result of the performance of a project.  This amount the amount of earnings above the hurdle rate.  The hurdle rate is the return of the alternative investment."> <img height="15" width="15" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
   	Tax Liabiltiy:
   		<input type="text" name="TaxLi" style="background-color: white" size="10" maxlength="5" disabled/>
-  		<a Title="Contribution Margin Per unit: This represent that marginal profit per unit of sale. The amount per unit that will be applied to fixed cost which increases operating income. The amount of your selling price over your variable cost per unit."> <img height="15" width="15" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
+  		<a Title="Tax Liability is the amount owed to the IRS based on the ammount of net income."> <img height="15" width="15" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
   	Payback:
   		<input type="text" name="Payback" style="background-color: white" size="10" maxlength="5" disabled/>
-  		<a Title="Contribution Margin Per unit: This represent that marginal profit per unit of sale. The amount per unit that will be applied to fixed cost which increases operating income. The amount of your selling price over your variable cost per unit."> <img height="15" width="15" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
+  		<a Title="Measures liquidity.  This number represents the number of years until you break even on your orginial investment."> <img height="15" width="15" src="http://upload.wikimedia.org/wikipedia/en/a/af/Question_mark.png" /></a>
  
 	
   	</h3>
