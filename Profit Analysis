@@ -197,7 +197,7 @@ as changes occur in the units sold, the selling price, the variable cost per uni
 	</center>
 	<br>
 	<form name=CVP>
-		<h3>STEP #1:</h3>
+		<h3>Inputs:</h3>
 		<br>
 		<h3>
 			What is your selling price?<input type="text" name="SellingPrice" style="background-color: white" size="10" maxlength="50"/><br>
