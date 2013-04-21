@@ -1,4 +1,3 @@
-
 <!Doctype html>
 <html>
 <meta charset="utf-8">
@@ -36,8 +35,43 @@ document.Capital.AnnualCashflow.value=((1.1)*(document.Capital.AnnualCashflow.va
 document.Capital.Payback.value=((document.Capital.Investment.value)/(document.Capital.AnnualCashflow.value)).toFixed(2) +" years"
 	}
 	
-function CB2(){
+function Cool(){
+var x= document.Uniform;
+var y1=x.Year1.value;
+var y2=x.Year2.value;
+var y3=x.Year3.value;
+var y4=x.Year4.value;
+var y5=x.Year5.value;
+var y6=x.Year6.value;
+var y7=x.Year7.value;
+var y8=x.Year8.value;
+var y9=x.Year9.value;
+var y10=x.Year10.value;
+var y0=x.Year0.value;
 
+x.NCF0.value=x.Cashin0.value-x.Cashout0.value
+x.NCF1.value=x.Cashin1.value-x.Cashout1.value
+x.NCF2.value=x.Cashin2.value-x.Cashout2.value
+x.NCF3.value=x.Cashin3.value-x.Cashout3.value
+x.NCF4.value=x.Cashin4.value-x.Cashout4.value
+x.NCF5.value=x.Cashin5.value-x.Cashout5.value
+x.NCF6.value=x.Cashin6.value-x.Cashout6.value
+x.NCF7.value=x.Cashin7.value-x.Cashout7.value
+x.NCF8.value=x.Cashin8.value-x.Cashout8.value
+x.NCF9.value=x.Cashin9.value-x.Cashout9.value
+x.NCF10.value=x.Cashin10.value-x.Cashout10.value
+x.DiscountedCF1.value=(x.Cashin1.value-x.Cashout1.value)*(1/(Math.pow((1+x.DiscountRate.value), y1)))
+x.DiscountedCF2.value=(x.Cashin2.value-x.Cashout2.value)*(1/(Math.pow((1+x.DiscountRate.value), y2)))
+x.DiscountedCF3.value=(x.Cashin3.value-x.Cashout3.value)*(1/(Math.pow((1+x.DiscountRate.value), y3)))
+x.DiscountedCF4.value=(x.Cashin4.value-x.Cashout4.value)*(1/(Math.pow((1+x.DiscountRate.value), y4)))
+x.DiscountedCF5.value=(x.Cashin5.value-x.Cashout5.value)*(1/(Math.pow((1+x.DiscountRate.value), y5)))
+x.DiscountedCF6.value=(x.Cashin6.value-x.Cashout6.value)*(1/(Math.pow((1+x.DiscountRate.value), y6)))
+x.DiscountedCF7.value=(x.Cashin7.value-x.Cashout7.value)*(1/(Math.pow((1+x.DiscountRate.value), y7)))
+x.DiscountedCF8.value=(x.Cashin8.value-x.Cashout8.value)*(1/(Math.pow((1+x.DiscountRate.value), y8)))
+x.DiscountedCF9.value=(x.Cashin9.value-x.Cashout9.value)*(1/(Math.pow((1+x.DiscountRate.value), y9)))
+x.DiscountedCF10.value=(x.Cashin10.value-x.Cashout10.value)*(1/(Math.pow((1+x.DiscountRate.value), y10)))
+x.DiscountedCF0.value=(x.Cashin0.value-x.Cashout0.value)*(1/(Math.pow((1+x.DiscountRate.value), y0)))
+x.Done.value=parseInt(x.DiscountedCF0.value, 10) + parseInt(x.DiscountedCF1.value, 10) + parseInt(x.DiscountedCF2.value, 10) + parseInt(x.DiscountedCF3.value, 10) + parseInt(x.DiscountedCF4.value, 10) + parseInt(x.DiscountedCF5.value, 10) + parseInt(x.DiscountedCF6.value, 10) + parseInt(x.DiscountedCF7.value, 10) + parseInt(x.DiscountedCF8.value, 10) + parseInt(x.DiscountedCF9.value, 10) + parseInt(x.DiscountedCF10.value, 10)
 }	
 
 
@@ -88,6 +122,7 @@ function CB2(){
   
 <form name=Uniform>
 	<h3>Non-Uniform Cash flows</h3>
+	<input type="button" value="Analyze" ONClick="Cool()">
   <table id="myTable" border="4">
   <tr>
 	<td>Discout Rate</td>
@@ -100,7 +135,6 @@ function CB2(){
 	<td>Cash in</td>
 	<td>Cash Out</td>
 	<td>Net Cash flow</td>
-	<td>Discount Factor</td>
 	<td>Discounted Cashflow</td>
 	</tr>
   <tr>
@@ -109,7 +143,6 @@ function CB2(){
 	<td><input type="text" name="Cashin0" style="background-color: white" size="10" maxLength="5" /></td>
 	<td><input type="text" name="Cashout0" style="background-color: white" size="10" maxLength="5" /></td>
     <td><input type="text" name="NCF0" style="background-color: white" size="10" maxLength="5" disabled/></td>
-	<td><input type="text" name="Discount0" style="background-color: white" size="15" maxLength="5" disabled/></td>
 	<td><input type="text" name="DiscountedCF0" style="background-color: white" size="15" maxLength="5" disabled/></td>
   </tr>
   <tr>
@@ -118,7 +151,6 @@ function CB2(){
 	<td><input type="text" name="Cashin1" style="background-color: white" size="10" maxLength="5" /></td>
 	<td><input type="text" name="Cashout1" style="background-color: white" size="10" maxLength="5" /></td>
     <td><input type="text" name="NCF1" style="background-color: white" size="10" maxLength="5" disabled/></td>
-	<td><input type="text" name="Discount1" style="background-color: white" size="15" maxLength="5" disabled/></td>
 	<td><input type="text" name="DiscountedCF1" style="background-color: white" size="15" maxLength="5" disabled/></td>
   </tr>
   <tr>
@@ -127,7 +159,6 @@ function CB2(){
 	<td><input type="text" name="Cashin2" style="background-color: white" size="10" maxLength="5" /></td>
 	<td><input type="text" name="Cashout2" style="background-color: white" size="10" maxLength="5" /></td>
     <td><input type="text" name="NCF2" style="background-color: white" size="10" maxLength="5" disabled/></td>
-	<td><input type="text" name="Discount2" style="background-color: white" size="15" maxLength="5" disabled/></td>
 	<td><input type="text" name="DiscountedCF2" style="background-color: white" size="15" maxLength="5" disabled/></td>
   </tr>
   <tr>
@@ -136,7 +167,6 @@ function CB2(){
 	<td><input type="text" name="Cashin3" style="background-color: white" size="10" maxLength="5" /></td>
 	<td><input type="text" name="Cashout3" style="background-color: white" size="10" maxLength="5" /></td>
     <<td><input type="text" name="NCF3" style="background-color: white" size="10" maxLength="5" disabled/></td>
-	<td><input type="text" name="Discount3" style="background-color: white" size="15" maxLength="5" disabled/></td>
 	<td><input type="text" name="DiscountedCF3" style="background-color: white" size="15" maxLength="5" disabled/></td>
   </tr>
   <tr>
@@ -145,7 +175,6 @@ function CB2(){
 	<td><input type="text" name="Cashin4" style="background-color: white" size="10" maxLength="5" /></td>
 	<td><input type="text" name="Cashout4" style="background-color: white" size="10" maxLength="5" /></td>
     <td><input type="text" name="NCF4" style="background-color: white" size="10" maxLength="5" disabled/></td>
-	<td><input type="text" name="Discount4" style="background-color: white" size="15" maxLength="5" disabled/></td>
 	<td><input type="text" name="DiscountedCF4" style="background-color: white" size="15" maxLength="5" disabled/></td>
   </tr>
   <tr>
@@ -154,7 +183,6 @@ function CB2(){
 	<td><input type="text" name="Cashin5" style="background-color: white" size="10" maxLength="5" /></td>
 	<td><input type="text" name="Cashout5" style="background-color: white" size="10" maxLength="5" /></td>
     <td><input type="text" name="NCF5" style="background-color: white" size="10" maxLength="5" disabled/></td>
-	<td><input type="text" name="Discount5" style="background-color: white" size="15" maxLength="5" disabled/></td>
 	<td><input type="text" name="DiscountedCF5" style="background-color: white" size="15" maxLength="5" disabled/></td>
   </tr>
   <tr>
@@ -163,7 +191,6 @@ function CB2(){
 	<td><input type="text" name="Cashin6" style="background-color: white" size="10" maxLength="5" /></td>
 	<td><input type="text" name="Cashout6" style="background-color: white" size="10" maxLength="5" /></td>
     <td><input type="text" name="NCF6" style="background-color: white" size="10" maxLength="5" disabled/></td>
-	<td><input type="text" name="Discount6" style="background-color: white" size="15" maxLength="5" disabled/></td>
 	<td><input type="text" name="DiscountedCF6" style="background-color: white" size="15" maxLength="5" disabled/></td>
   </tr>
   <tr>
@@ -172,7 +199,6 @@ function CB2(){
 	<td><input type="text" name="Cashin7" style="background-color: white" size="10" maxLength="5" /></td>
 	<td><input type="text" name="Cashout7" style="background-color: white" size="10" maxLength="5" /></td>
     <td><input type="text" name="NCF7" style="background-color: white" size="10" maxLength="5" disabled/></td>
-	<td><input type="text" name="Discount7" style="background-color: white" size="15" maxLength="5" disabled/></td>
 	<td><input type="text" name="DiscountedCF7" style="background-color: white" size="15" maxLength="5" disabled/></td>
   </tr>
   <tr>
@@ -181,7 +207,6 @@ function CB2(){
 	<td><input type="text" name="Cashin8" style="background-color: white" size="10" maxLength="5" /></td>
 	<td><input type="text" name="Cashout8" style="background-color: white" size="10" maxLength="5" /></td>
     <td><input type="text" name="NCF8" style="background-color: white" size="10" maxLength="5" disabled/></td>
-	<td><input type="text" name="Discount8" style="background-color: white" size="15" maxLength="5" disabled/></td>
 	<td><input type="text" name="DiscountedCF8" style="background-color: white" size="15" maxLength="5" disabled/></td>
   </tr>
   <tr>
@@ -190,7 +215,6 @@ function CB2(){
 	<td><input type="text" name="Cashin9" style="background-color: white" size="10" maxLength="5" /></td>
 	<td><input type="text" name="Cashout9" style="background-color: white" size="10" maxLength="5" /></td>
     <td><input type="text" name="NCF9" style="background-color: white" size="10" maxLength="5" disabled/></td>
-	<td><input type="text" name="Discount9" style="background-color: white" size="15" maxLength="5" disabled/></td>
 	<td><input type="text" name="DiscountedCF9" style="background-color: white" size="15" maxLength="5" disabled/></td>
   </tr>
   <tr>
@@ -199,7 +223,6 @@ function CB2(){
 	<td><input type="text" name="Cashin10" style="background-color: white" size="10" maxLength="5" /></td>
 	<td><input type="text" name="Cashout10" style="background-color: white" size="10" maxLength="5" /></td>
     <td><input type="text" name="NCF10" style="background-color: white" size="10" maxLength="5" disabled/></td>
-	<td><input type="text" name="Discount10" style="background-color: white" size="15" maxLength="5" disabled/></td>
 	<td><input type="text" name="DiscountedCF10" style="background-color: white" size="15" maxLength="5" disabled/></td>
   </tr>
   <tr>
@@ -208,8 +231,7 @@ function CB2(){
 	<td><input type="text" name="CashTotal1" style="background-color: white" size="10" maxLength="5" /></td>
 	<td><input type="text" name="CashTotal2" style="background-color: white" size="10" maxLength="5" /></td>
     <td><input type="text" name="NetCashflow1" style="background-color: white" size="10" maxLength="5" disabled/></td>
-	<td>NPV:</td>
-	<td><input type="text" name="NPV" style="background-color: white" size="15" maxLength="5" disabled/></td>
+	<td>NPV:<input type="text" name="Done" style="background-color: white" size="15" maxLength="5" disabled/></td>
   </tr>
   
 	</table>
