@@ -48,18 +48,20 @@ var y8=x.Year8.value;
 var y9=x.Year9.value;
 var y10=x.Year10.value;
 var y0=x.Year0.value;
+var TTXR=x.TaxRate23.value;
 
-x.NCF0.value=x.Cashin0.value-x.Cashout0.value
-x.NCF1.value=x.Cashin1.value-x.Cashout1.value
-x.NCF2.value=x.Cashin2.value-x.Cashout2.value
-x.NCF3.value=x.Cashin3.value-x.Cashout3.value
-x.NCF4.value=x.Cashin4.value-x.Cashout4.value
-x.NCF5.value=x.Cashin5.value-x.Cashout5.value
-x.NCF6.value=x.Cashin6.value-x.Cashout6.value
-x.NCF7.value=x.Cashin7.value-x.Cashout7.value
-x.NCF8.value=x.Cashin8.value-x.Cashout8.value
-x.NCF9.value=x.Cashin9.value-x.Cashout9.value
-x.NCF10.value=x.Cashin10.value-x.Cashout10.value
+
+x.NCF0.value=(x.Cashin0.value-x.Cashout0.value)*(1-TTXR)
+x.NCF1.value=(x.Cashin1.value-x.Cashout1.value)*(1-TTXR)
+x.NCF2.value=(x.Cashin2.value-x.Cashout2.value)*(1-TTXR)
+x.NCF3.value=(x.Cashin3.value-x.Cashout3.value)*(1-TTXR)
+x.NCF4.value=(x.Cashin4.value-x.Cashout4.value)*(1-TTXR)
+x.NCF5.value=(x.Cashin5.value-x.Cashout5.value)*(1-TTXR)
+x.NCF6.value=(x.Cashin6.value-x.Cashout6.value)*(1-TTXR)
+x.NCF7.value=(x.Cashin7.value-x.Cashout7.value)*(1-TTXR)
+x.NCF8.value=(x.Cashin8.value-x.Cashout8.value)*(1-TTXR)
+x.NCF9.value=(x.Cashin9.value-x.Cashout9.value)*(1-TTXR)
+x.NCF10.value=(x.Cashin10.value-x.Cashout10.value)*(1-TTXR)
 x.DiscountedCF1.value=(x.Cashin1.value-x.Cashout1.value)*(1/(Math.pow((1+x.DiscountRate.value), y1)))
 x.DiscountedCF2.value=(x.Cashin2.value-x.Cashout2.value)*(1/(Math.pow((1+x.DiscountRate.value), y2)))
 x.DiscountedCF3.value=(x.Cashin3.value-x.Cashout3.value)*(1/(Math.pow((1+x.DiscountRate.value), y3)))
@@ -75,7 +77,13 @@ x.Done.value=parseInt(x.DiscountedCF0.value, 10) + parseInt(x.DiscountedCF1.valu
 x.Done1.value=parseInt(x.NCF0.value, 10) + parseInt(x.NCF1.value, 10) + parseInt(x.NCF2.value, 10) + parseInt(x.NCF3.value, 10) + parseInt(x.NCF4.value, 10) + parseInt(x.NCF5.value, 10) + parseInt(x.NCF6.value, 10) + parseInt(x.NCF7.value, 10) + parseInt(x.NCF8.value, 10) + parseInt(x.NCF9.value, 10) + parseInt(x.NCF10.value, 10)
 x.Done2.value=parseInt(x.Cashin0.value, 10) + parseInt(x.Cashin1.value, 10) + parseInt(x.Cashin2.value, 10) + parseInt(x.Cashin3.value, 10) + parseInt(x.Cashin4.value, 10) + parseInt(x.Cashin5.value, 10) + parseInt(x.Cashin6.value, 10) + parseInt(x.Cashin7.value, 10) + parseInt(x.Cashin8.value, 10) + parseInt(x.Cashin9.value, 10) + parseInt(x.Cashin10.value, 10)
 x.Done3.value= parseInt(x.Cashout0.value, 10) + parseInt(x.Cashout1.value, 10) + parseInt(x.Cashout2.value, 10) + parseInt(x.Cashout3.value, 10) + parseInt(x.Cashout4.value, 10) + parseInt(x.Cashout5.value, 10) + parseInt(x.Cashout6.value, 10) + parseInt(x.Cashout7.value, 10) + parseInt(x.Cashout8.value, 10) + parseInt(x.Cashout9.value, 10) + parseInt(x.Cashout10.value, 10) 
-}	
+	}
+
+function myFunction23(x)
+{
+x.style.background="yellow";
+}
+	
 
 
 
@@ -88,14 +96,13 @@ x.Done3.value= parseInt(x.Cashout0.value, 10) + parseInt(x.Cashout1.value, 10) +
   	<h2>Please add requested information:</h2>
 	<h3>Uniform Cashflows</h3>
   	<h3>
-  		Investment:<input type="text" name="Investment" style="background-color: white" size="10" maxlength="50"/><br>
-  		Useful life:<input type="text" name="Life" style="background-color: white" size="10" maxlength="50"/><br>
-  		Estimated Annual Cashflow:<input type="text" name="AnnualCashflow" style="background-color: white" size="10" maxlength="50"/><br>
-  		Required Rate of Return(in decimal form):<input type="text" name="Hurdlerate" style="background-color: white" size="10" maxlength="50"/><br>
-  		Investment in working Capital:<input type="text" name="Investmentin_WC" style="background-color: white" size="10" maxlength="50"/><br>
-  		Tax Rate(in decimal form):<input type="text" name="TxRate" style="background-color: white" size="10" maxlength="50"/><br>
-  		Salvage value of Investment at the end of Useful life:<input type="text" name="Salvage" style="background-color: white" size="10" maxlength="50"/><br>
-		Increase in Annual Cashflow:<input type="text" name="MAKENEWNAMESalvage" style="background-color: white" size="10" maxlength="50"/><br>
+  		Investment:<input type="text" name="Investment" style="background-color: white" size="10" maxlength="50" onfocus="myFunction23(this)"/><br>
+  		Useful life:<input type="text" name="Life" style="background-color: white" size="10" maxlength="50" onfocus="myFunction23(this)"/><br>
+  		Estimated Annual Cashflow:<input type="text" name="AnnualCashflow" style="background-color: white" size="10" maxlength="50"onfocus="myFunction23(this)"/><br>
+  		Required Rate of Return(in decimal form):<input type="text" name="Hurdlerate" style="background-color: white" size="10" maxlength="50"onfocus="myFunction23(this)"/><br>
+  		Investment in working Capital:<input type="text" name="Investmentin_WC" style="background-color: white" size="10" maxlength="50"onfocus="myFunction23(this)"/><br>
+  		Tax Rate(in decimal form):<input type="text" name="TxRate" style="background-color: white" size="10" maxlength="50"onfocus="myFunction23(this)"/><br>
+  		Salvage value of Investment at the end of Useful life:<input type="text" name="Salvage" style="background-color: white" size="10" maxlength="50"onfocus="myFunction23(this)"/><br>
   		<input type="button" value="Analyze" ONClick="CB()">
 		<input type="button" value="Clear All" ONClick="this.form.reset(); document.Capital.reset()">
 		<input type="button" value="10% increase in Cashflow" ONClick="CB1()">
@@ -131,7 +138,9 @@ x.Done3.value= parseInt(x.Cashout0.value, 10) + parseInt(x.Cashout1.value, 10) +
 	<table id="myTable" border="4">
   <tr>
 	<td>Discout Rate(decimal)</td>
-	<td><input type="text" name="DiscountRate"</td>
+	<td><input type="text" name="DiscountRate" value="0"/></td>
+	<td>Tax Rate(decimal)</td>
+	<td><input type="text" name="TaxRate23" value="0"/></td>
 	</tr>
   <tr>
 	<td>Time of Receipt</td>
